@@ -1,0 +1,83 @@
+﻿body {
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tdborder {
+    border: 2px solid black;
+}
+
+.auto-style1 {
+    width: 100%;
+    height: 51px;
+    background-color: #c23838;
+    border-color: #c23838;
+}
+
+.tdcenter {
+    text-align: center;
+}
+
+.tdpadding {
+    padding: 20px 20px 24px 20px;
+}
+
+.tdright {
+    float: right;
+}
+
+.auto-style5 {
+    float: right;
+    margin-left: 40px;
+    margin-top: 13px;
+    margin-right: 80px;
+}
+
+.tabs {
+    color: #fff;
+    background-color: #c23838;
+    border-color: #c23838;
+    padding: 8px 9px;
+    font-size: 15px;
+    line-height: 1.33333;
+    border-radius: 18px;
+}
+
+div {
+
+}
+
+p{
+    font-size: medium;
+}
+
+.booknow {
+    color: #fff;
+    background-color: #c23838;
+    border-color: #c23838;
+    padding: 8px 9px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.button-border {
+    border: none;
+    outline: none;
+    border-bottom-color: #c23838;
+}
+
+.form-label{
+    font-size: medium;
+    font-weight: bold;
+}
+
+.form-input {
+    width: 100%;
+    height: 32px;
+    border-radius: 6px;
+    margin-top: 6px;
+    margin-bottom: 25px;
+    padding: 0px 10px;
+    font-size: 22px;
+    font-variant: all-small-caps;
+}
