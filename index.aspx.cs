@@ -13,5 +13,15 @@ namespace ProjectDesignDemo
         {
 
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("loginsignup.aspx");
+        }
+
+        protected void LSignup_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("loginsignup.aspx");
+        }
     }
 }

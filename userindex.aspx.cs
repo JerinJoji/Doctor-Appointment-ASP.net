@@ -31,5 +31,10 @@ namespace ProjectDesignDemo
         {
 
         }
+
+        protected void Linklogout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
     }
 }

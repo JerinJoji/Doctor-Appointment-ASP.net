@@ -40,5 +40,15 @@ namespace ProjectDesignDemo
             LoginButton.BackColor = Color.FromName("#c23838");
             LoginButton.ForeColor = Color.FromName("#fff");
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("userindex.aspx");
+        }
+
+        protected void BSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -76,7 +76,7 @@
                                  <asp:Label ID="Lpuser" runat="server" Font-Size="Large" ForeColor="White" Text="Label"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                  <span class="glyphicon glyphicon-log-out" style="left: 0px; top: -1px; height: 24px; color:white;">&nbsp;</span>
-                                 <asp:LinkButton ID="Linklogout" runat="server" Font-Size="Large" ForeColor="White">Logout</asp:LinkButton>
+                                 <asp:LinkButton ID="Linklogout" runat="server" Font-Size="Large" ForeColor="White" OnClick="Linklogout_Click">Logout</asp:LinkButton>
                            </td>
         </tr>
     </table>
@@ -107,7 +107,8 @@
             <br />
             <br />
             <asp:Panel ID="Panelbookappoint" runat="server">
-                <div style="margin:3% 14%; background-color:#f5f6f7">
+                <div>
+                    <div style="margin:3% 14%; background-color:#f5f6f7">
                     <table style="width: 100%;">
                         <tr>
                             <td>
@@ -138,11 +139,12 @@
                         <tr>
                             <td>
                                 <center> 
-                                <asp:Button ID="appoint" runat="server" Text="BOOK APPOINTMENT" CssClass="booknow" OnClientClick="return confirm('Please confirm the options selected before booking. Are you sure you want to Book?')"  />
+                                <asp:Button ID="appoint" runat="server" Text="BOOK APPOINTMENT" CssClass="booknow" OnClientClick="return confirm('Please confirm the options selected before booking. Are you sure you want to Book?')"></asp:Button>
                                 </center>
                             </td>
                         </tr>
                     </table>
+                </div>
                 </div>
             </asp:Panel>
             <asp:Panel ID="Panelrecord" runat="server" BorderStyle="Solid">

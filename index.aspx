@@ -23,11 +23,11 @@
                 <asp:Label ID="Label1" runat="server" Font-Size="X-Large" ForeColor="White" Text="Doctors Appointment"></asp:Label>
             </td>
                            <td class="auto-style5">
-                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in" style="left: 0px; top: -1px; height: 24px; color:white;">&nbsp;</span><asp:LinkButton ID="LinkButton1" runat="server" Font-Size="Large" ForeColor="White">LogIn</asp:LinkButton>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in" style="left: 0px; top: -1px; height: 24px; color:white;">&nbsp;</span><asp:LinkButton ID="LLogin" runat="server" Font-Size="Large" ForeColor="White" OnClick="LinkButton1_Click">LogIn</asp:LinkButton>
                                 
                                &nbsp;&nbsp;&nbsp;&nbsp;
                                 
-                               <span class="glyphicon glyphicon-plus" style="left: 0px; top: -1px; height: 24px; color:white;">&nbsp;</span><asp:LinkButton ID="LinkButton2" runat="server" Font-Size="Large" ForeColor="White">SignUp</asp:LinkButton>
+                               <span class="glyphicon glyphicon-plus" style="left: 0px; top: -1px; height: 24px; color:white;">&nbsp;</span><asp:LinkButton ID="LSignup" runat="server" Font-Size="Large" ForeColor="White" OnClick="LSignup_Click">SignUp</asp:LinkButton>
 
                            </td>
         </tr>
