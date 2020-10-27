@@ -26,5 +26,10 @@ namespace ProjectDesignDemo
             Panelrecord.Visible = true;
             Panelbookappoint.Visible = false;
         }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

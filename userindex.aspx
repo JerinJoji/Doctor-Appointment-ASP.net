@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
     <style type="text/css">
         body{
             margin: 0px;
@@ -56,6 +57,11 @@
         .auto-style6 {
             width: 24%;
         }
+        
+        div td{
+            width: 50%;
+            margin-bottom: 6%;
+        }
         </style>
 </head>
 <body>
@@ -95,14 +101,48 @@
         </div>
         
         <div style="padding:50px 14% 30px 15%;">
-            <asp:Button ID="Buttonbookappoint" runat="server" Text="Book Appointment" OnClick="Buttonbookappoint_Click" CssClass="tabs" />
+            <asp:Button ID="Buttonbookappoint" runat="server" Text="APPOINTMENT" OnClick="Buttonbookappoint_Click" CssClass="tabs" />
 &nbsp;
-            <asp:Button ID="Buttonrecord" runat="server" Text="Record" OnClick="Buttonrecord_Click" CssClass="tabs" />
+            <asp:Button ID="Buttonrecord" runat="server" Text="RECORD" OnClick="Buttonrecord_Click" CssClass="tabs" />
             <br />
             <br />
-            <asp:Panel ID="Panelbookappoint" runat="server" BorderStyle="Solid">
-                <div>
-
+            <asp:Panel ID="Panelbookappoint" runat="server">
+                <div style="margin:3% 14%; background-color:#f5f6f7">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                <asp:Label ID="Label5" runat="server" Text="CHOOSE DEPARTMENT" CssClass="form-label"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:DropDownList ID="DropDownList1" runat="server" CssClass ="form-input"></asp:DropDownList>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td><asp:Label ID="Label6" runat="server" Text="CHOOSE DOCTOR" CssClass="form-label"></asp:Label></td>
+                            <td><asp:DropDownList ID="DropDownList2" runat="server" CssClass ="form-input"></asp:DropDownList></td>
+                        </tr>
+                        <tr>
+                            <td><asp:Label ID="Label7" runat="server" Text="CHOOSE DOCTOR" CssClass="form-label"></asp:Label></td>
+                            <td>
+                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/img/iconcalendar.png" Height="21px" Width="19px" />
+                                <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center> 
+                                <asp:Button ID="appoint" runat="server" Text="BOOK APPOINTMENT" CssClass="booknow" OnClientClick="return confirm('Please confirm the options selected before booking. Are you sure you want to Book?')"  />
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </asp:Panel>
             <asp:Panel ID="Panelrecord" runat="server" BorderStyle="Solid">
