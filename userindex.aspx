@@ -95,17 +95,16 @@
         </div>
         
         <div style="padding:50px 14% 30px 15%;">
-            <asp:Button ID="Buttondoclist" runat="server" Text="Doctors List" OnClick="Button1_Click"  CssClass="tabs" />
-        &nbsp;
             <asp:Button ID="Buttonbookappoint" runat="server" Text="Book Appointment" OnClick="Buttonbookappoint_Click" CssClass="tabs" />
 &nbsp;
             <asp:Button ID="Buttonrecord" runat="server" Text="Record" OnClick="Buttonrecord_Click" CssClass="tabs" />
             <br />
             <br />
-            <asp:Panel ID="Paneldoctorlist" runat="server" BorderColor="Black" BorderStyle="Solid">
-                doctor</asp:Panel>
             <asp:Panel ID="Panelbookappoint" runat="server" BorderStyle="Solid">
-                Appointment</asp:Panel>
+                <div>
+
+                </div>
+            </asp:Panel>
             <asp:Panel ID="Panelrecord" runat="server" BorderStyle="Solid">
                 Record</asp:Panel>
         </div>

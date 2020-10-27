@@ -11,28 +11,19 @@ namespace ProjectDesignDemo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Panelbookappoint.Visible = false;
-            Panelrecord.Visible = false;
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Paneldoctorlist.Visible = true;
-            Panelbookappoint.Visible = false;
+            Panelbookappoint.Visible = true;
             Panelrecord.Visible = false;
         }
 
         protected void Buttonbookappoint_Click(object sender, EventArgs e)
         {
             Panelbookappoint.Visible = true;
-            Paneldoctorlist.Visible = false;
             Panelrecord.Visible = false;
         }
 
         protected void Buttonrecord_Click(object sender, EventArgs e)
         {
             Panelrecord.Visible = true;
-            Paneldoctorlist.Visible = false;
             Panelbookappoint.Visible = false;
         }
     }
