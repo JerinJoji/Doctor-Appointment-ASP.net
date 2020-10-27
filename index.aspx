@@ -10,7 +10,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link href="css/style.css" rel="stylesheet" />
-    
+    <style type="text/css">
+        td, th{
+            width: 25%;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -30,9 +34,72 @@
     </table>
         <div style="padding:5% 10%;">
             <div style="padding:6% 0; text-align:center;">
-                <p> Kurji Holy Family Hospital was founded by the Medical Mission Sisters(MMS),a group of women religious in the catholic church, through the inspiration of their founder Mother (Dr.) Anna Dengel who first came to Padri Ki-Haweli, Patna City in 1939 and it functioned there till 1958. It was shifted to Kurji and formally inaugurated on November  19, 1958 by His Excellency Dr. Zakir Hussain, President of India.<br /><br />As the years went by, MMS needed other like minded religious groups to continue the healing ministry of Kurji Holy Family Hospital. Thus, in the  year 2000 it became a joint venture in which the MMS and the Sisters of Charity  of Nazareth (SCN) came together to further its mission of healing.  This mission is  continued  with several women religious groups, the Jesuits of Patna and the dedicated staff of the hospital.<br /><br />Alert and responsive to the signs of the times, the hospital endeavors to respond to the various health needs of the community. The dignity of the human person supersedes all other considerations and there is no discrimination of class, caste, gender or religion. To provide compassionate, quality health care at a low cost is the aim, and the hospital puts all its resources- human, material and spiritual- at the service of the sick and for promotion of health and well being.<br /><br />Now we Also started taking online appointments. Click below to book appointments</p>
+                <p>Now we Also started taking online appointments. Click below to book appointments.</p>
+                <p>Doctor Schedule is given below for your convenience.</p>
+                <p>Offline Registration :- 8:00 AM - 10:00AM</p>
                 <p>&nbsp;</p>
                 <asp:Button ID="BBookNow" runat="server" Text="Book Appointment" CssClass="booknow" Height="47px" Width="205px"/>
+            </div>
+            <div>
+                <h3>MEDICAL</h3>
+                <table class="table">
+                    <thead style="background-color:#c23838; color:#fff">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Doctor's Name</th>
+                            <th scope="col">Degree</th>
+                            <th scope="col">Day</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Dr. Ajit Kr. Sinha</td>
+                            <td>MD, DNB</td>
+                            <td>Monday, Friday</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>SURGICAL</h3>
+                <table class="table">
+                    <thead style="background-color:#c23838; color:#fff">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Doctor's Name</th>
+                            <th scope="col">Degree</th>
+                            <th scope="col">Day</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Dr. Vikash Kumar</td>
+                            <td>MS</td>
+                            <td>Monday, Wednesday, Friday</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>OB/GYNAE</h3>
+                <table class="table">
+                    <thead style="background-color:#c23838; color:#fff">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Doctor's Name</th>
+                            <th scope="col">Degree</th>
+                            <th scope="col">Day</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Dr. Meena Samant</td>
+                            <td>MD,DNB</td>
+                            <td>Tueday, Thursday, Saturday</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </form>
