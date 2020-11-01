@@ -41,7 +41,7 @@
                     <br />
                     <input id="TOpd" type="text" class="form-input" placeholder="Enter Your OPD No."/>
                     <br />
-                    <asp:TextBox ID="TPassword" runat="server" CssClass="form-input"></asp:TextBox>
+                    <asp:TextBox ID="TPassword" runat="server" CssClass="form-input" placeholder="Enter Admin Password"></asp:TextBox>
                     <br />
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Button ID="BLogin" runat="server" CssClass="booknow" Height="40px" Text="LOGIN" Width="104px" OnClick="Button1_Click" />
@@ -78,12 +78,24 @@
                         <asp:ListItem>FEMALE</asp:ListItem>
                     </asp:RadioButtonList>
                     
-                    <asp:Label ID="LDob" runat="server" Text="DATE OF BIRTH" CssClass="form-label "></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="LDob" runat="server" Text="DATE OF BIRTH" CssClass="form-label "></asp:Label>
+                    <br />
+                    <input id="TDob" type="text" class="form-input form-input-half"/>
+                    <asp:ImageButton ID="ImageButtonCal" runat="server" ImageUrl="~/img/iconcalendar.png" OnClick="ImageButtonCal_Click" />
+                    <asp:Calendar ID="CalendarDob" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="220px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="344px" OnSelectionChanged="CalendarDob_SelectionChanged" OnDayRender="CalendarDob_DayRender">
+                        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
+                        <DayStyle Width="14%" />
+                        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
+                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
+                        <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
+                        <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
+                        <TodayDayStyle BackColor="#CCCC99" />
+                    </asp:Calendar>
+                    <br /> <br />
                     <asp:Label ID="LAge" runat="server" CssClass="form-label" Text="AGE : "></asp:Label>
                     <asp:Label ID="LDispAge" runat="server" Text="Label" CssClass="form-label"></asp:Label>
-                    <br />
-                    <input id="TDob" type="text" class="form-input form-input-half"/>&nbsp;&nbsp;<br /> <br />
-                    
+                    <br /> <br />
                     <asp:Label ID="LAddress" runat="server" Text="ADDRESS" CssClass="form-label"></asp:Label>
                     <br />
                     <textarea id="TextArea1" cols="20" rows="7" class="form-input" style="resize:none; width:100%   ; height:100px;"></textarea>

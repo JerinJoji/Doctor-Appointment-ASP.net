@@ -11,8 +11,13 @@ namespace ProjectDesignDemo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Panelbookappoint.Visible = true;
-            Panelrecord.Visible = false;
+            if (!IsPostBack)
+            {
+                Panelbookappoint.Visible = true;
+                Panelrecord.Visible = false;
+                CalendarDoa.Visible = false;
+            }
+            
         }
 
         protected void Buttonbookappoint_Click(object sender, EventArgs e)
@@ -27,14 +32,30 @@ namespace ProjectDesignDemo
             Panelbookappoint.Visible = false;
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void Linklogout_Click(object sender, EventArgs e)
         {
             Response.Redirect("index.aspx");
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            if (CalendarDoa.Visible)
+            {
+                CalendarDoa.Visible = false;
+            }
+            else
+            {
+                CalendarDoa.Visible = true;
+            }
+        }
+
+        protected void CalendarDoa_DayRender(object sender, DayRenderEventArgs e)
+        {
+            if(e.Day.Date < DateTime.Now.Date)
+            {
+                e.Day.IsSelectable = false;
+                e.Cell.ForeColor = System.Drawing.Color.LightGray;
+            }
         }
     }
 }

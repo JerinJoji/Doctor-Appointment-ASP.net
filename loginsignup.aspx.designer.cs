@@ -159,6 +159,24 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.Label LDob;
 
         /// <summary>
+        /// ImageButtonCal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButtonCal;
+
+        /// <summary>
+        /// CalendarDob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar CalendarDob;
+
+        /// <summary>
         /// LAge control.
         /// </summary>
         /// <remarks>

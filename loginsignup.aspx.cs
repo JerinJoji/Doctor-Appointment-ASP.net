@@ -12,13 +12,17 @@ namespace ProjectDesignDemo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            PanelLogin.Visible = true;
-            PanelRegister.Visible = false;
-            LoginButton.BackColor = System.Drawing.Color.White;
-            LoginButton.ForeColor = System.Drawing.Color.Black;
-            RegisterButton.BackColor = Color.FromName("#c23838");
-            RegisterButton.ForeColor = Color.FromName("#fff");
-            TPassword.Visible = false;
+            if (!IsPostBack)
+            {
+                CalendarDob.Visible = false;
+                PanelLogin.Visible = true;
+                PanelRegister.Visible = false;
+                LoginButton.BackColor = System.Drawing.Color.White;
+                LoginButton.ForeColor = System.Drawing.Color.Black;
+                RegisterButton.BackColor = Color.FromName("#c23838");
+                RegisterButton.ForeColor = Color.FromName("#fff");
+                TPassword.Visible = false;
+            }
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
@@ -49,6 +53,32 @@ namespace ProjectDesignDemo
         protected void BSubmit_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void CalendarDob_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ImageButtonCal_Click(object sender, ImageClickEventArgs e)
+        {
+            if (CalendarDob.Visible)
+            {
+                CalendarDob.Visible = false;
+            }
+            else
+            {
+                CalendarDob.Visible = true;
+            }
+        }
+
+        protected void CalendarDob_DayRender(object sender, DayRenderEventArgs e)
+        {
+            if (e.Day.Date > DateTime.Now.Date)
+            {
+                e.Day.IsSelectable = false;
+                e.Cell.ForeColor = System.Drawing.Color.LightGray;
+            }
         }
     }
 }
