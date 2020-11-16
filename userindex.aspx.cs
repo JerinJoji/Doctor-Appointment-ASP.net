@@ -13,6 +13,7 @@ namespace ProjectDesignDemo
         {
             if (!IsPostBack)
             {
+                MultiView1.ActiveViewIndex = 0;
                 Panelbookappoint.Visible = true;
                 Panelrecord.Visible = false;
                 CalendarDoa.Visible = false;
@@ -56,6 +57,21 @@ namespace ProjectDesignDemo
                 e.Day.IsSelectable = false;
                 e.Cell.ForeColor = System.Drawing.Color.LightGray;
             }
+        }
+
+        protected void btnAppointment_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 1;
+        }
+
+        protected void gotopaymentview_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 2;
+        }
+
+        protected void backtoappointview_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 0;
         }
     }
 }
