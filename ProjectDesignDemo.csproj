@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ProjectData.mdf" />
+    <Content Include="App_Data\ProjectData_log.ldf">
+      <DependentUpon>ProjectData.mdf</DependentUpon>
+    </Content>
     <Content Include="css\style.css" />
     <Content Include="img\iconcalendar.png" />
     <Content Include="index.aspx" />

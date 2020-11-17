@@ -288,13 +288,13 @@
                                             </thead>
 
                                             <tr>
-                                                <td class="auto-style14">
+                                                <td class="auto-style14 tdborder">
                                                     <center>
                                                         <asp:Label ID="Label8" runat="server" CssClass="form-label" Text="DEPARTMENT"></asp:Label>
                                                     </center>
                                                 </td>
                                             
-                                                <td class="auto-style14">
+                                                <td class="auto-style14 tdborder">
                                                     <center>
                                                         <asp:Label ID="lbldepart" runat="server" CssClass="form-label" Text="NIL"></asp:Label>
                                                     </center>
@@ -302,13 +302,13 @@
                                             </tr>
                                         
                                             <tr>
-                                                <td class="auto-style15">
+                                                <td class="auto-style15 tdborder">
                                                     <center>
                                                         <asp:Label ID="Label9" runat="server" CssClass="form-label" Text="DOCTOR"></asp:Label>
                                                     </center>
                                                 </td>
                                                 
-                                                <td class="auto-style15">
+                                                <td class="auto-style15 tdborder">
                                                     <center>
                                                         <asp:Label ID="lbldoc" runat="server" CssClass="form-label" Text="NIL"></asp:Label>
                                                     </center>
@@ -316,13 +316,13 @@
                                             </tr>
                                         
                                             <tr>
-                                                <td class="auto-style16">
+                                                <td class="auto-style16 tdborder">
                                                     <center>
                                                         <asp:Label ID="Label10" runat="server" CssClass="form-label" Text="APPOINTMENT DATE"></asp:Label>
                                                     </center>
                                                 </td>
                                             
-                                                <td class="auto-style16">
+                                                <td class="auto-style16 tdborder">
                                                     <center>
                                                         <asp:Label ID="lbladate" runat="server" CssClass="form-label" Text="NIL"></asp:Label>
                                                     </center>
