@@ -60,6 +60,15 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.TextBox TPassword;
 
         /// <summary>
+        /// lbloginmsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbloginmsg;
+
+        /// <summary>
         /// BLogin control.
         /// </summary>
         /// <remarks>
@@ -105,6 +114,24 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.Label LName;
 
         /// <summary>
+        /// RFVPname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPname;
+
+        /// <summary>
+        /// TBPname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBPname;
+
+        /// <summary>
         /// LFname control.
         /// </summary>
         /// <remarks>
@@ -112,6 +139,24 @@ namespace ProjectDesignDemo
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LFname;
+
+        /// <summary>
+        /// RFVFname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVFname;
+
+        /// <summary>
+        /// TBFname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBFname;
 
         /// <summary>
         /// LPhone control.
@@ -123,6 +168,24 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.Label LPhone;
 
         /// <summary>
+        /// RFVPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPhone;
+
+        /// <summary>
+        /// TBPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBPhone;
+
+        /// <summary>
         /// LEmail control.
         /// </summary>
         /// <remarks>
@@ -132,6 +195,24 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.Label LEmail;
 
         /// <summary>
+        /// RFVEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVEmail;
+
+        /// <summary>
+        /// TBEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBEmail;
+
+        /// <summary>
         /// LGender control.
         /// </summary>
         /// <remarks>
@@ -139,6 +220,15 @@ namespace ProjectDesignDemo
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LGender;
+
+        /// <summary>
+        /// RFVGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVGender;
 
         /// <summary>
         /// RBGender control.
@@ -157,6 +247,24 @@ namespace ProjectDesignDemo
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LDob;
+
+        /// <summary>
+        /// RFVDob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVDob;
+
+        /// <summary>
+        /// TBDob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBDob;
 
         /// <summary>
         /// ImageButtonCal control.
@@ -204,6 +312,24 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.Label LAddress;
 
         /// <summary>
+        /// RFVAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVAddress;
+
+        /// <summary>
+        /// TBAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBAddress;
+
+        /// <summary>
         /// LVillage control.
         /// </summary>
         /// <remarks>
@@ -211,6 +337,15 @@ namespace ProjectDesignDemo
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LVillage;
+
+        /// <summary>
+        /// TBVillage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBVillage;
 
         /// <summary>
         /// LPost control.
@@ -222,6 +357,15 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.Label LPost;
 
         /// <summary>
+        /// TBPO control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBPO;
+
+        /// <summary>
         /// LPolice control.
         /// </summary>
         /// <remarks>
@@ -229,6 +373,15 @@ namespace ProjectDesignDemo
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LPolice;
+
+        /// <summary>
+        /// TBPS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBPS;
 
         /// <summary>
         /// LDistrict control.
@@ -240,6 +393,24 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.Label LDistrict;
 
         /// <summary>
+        /// RFVDistrict control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVDistrict;
+
+        /// <summary>
+        /// TBDistrict control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBDistrict;
+
+        /// <summary>
         /// LState control.
         /// </summary>
         /// <remarks>
@@ -247,6 +418,24 @@ namespace ProjectDesignDemo
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LState;
+
+        /// <summary>
+        /// RFVState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVState;
+
+        /// <summary>
+        /// DropDownState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownState;
 
         /// <summary>
         /// LPincode control.
@@ -258,6 +447,24 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.Label LPincode;
 
         /// <summary>
+        /// RFVPin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPin;
+
+        /// <summary>
+        /// TBPincode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBPincode;
+
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -265,6 +472,24 @@ namespace ProjectDesignDemo
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// RFVAadhar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVAadhar;
+
+        /// <summary>
+        /// TBAadhar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBAadhar;
 
         /// <summary>
         /// BReset control.

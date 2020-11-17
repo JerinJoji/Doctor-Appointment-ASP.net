@@ -28,6 +28,14 @@
         .auto-style7 {
             margin-bottom: 0px;
         }
+        .auto-style8 {
+            border-radius: 6px;
+            margin-top: 6px;
+            margin-bottom: 25px;
+            padding: 0px 10px;
+            font-size: 22px;
+            font-variant: all-small-caps;
+        }
     </style>
 </head>
 <body style="background-color:#c23838">
@@ -44,6 +52,8 @@
                     <asp:TextBox ID="TPassword" runat="server" CssClass="form-input" placeholder="Enter Admin Password"></asp:TextBox>
                     <br />
                     <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="lbloginmsg" runat="server" Font-Size="Small"></asp:Label><br /><br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Button ID="BLogin" runat="server" CssClass="booknow" Height="40px" Text="LOGIN" Width="104px" OnClick="Button1_Click" />
                     <br />
                     <br />
@@ -56,33 +66,41 @@
             <asp:Panel ID="PanelRegister" runat="server">
                 <div style="padding: 50px 50px 50px 50px">
                     <asp:Label ID="LName" runat="server" Text="PATIENT NAME" CssClass="form-label"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RFVPname" runat="server" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red" ControlToValidate="TBPname"></asp:RequiredFieldValidator>
                     <br />
-                    <input id="Tname" type="text" class="form-input"/>
-                    
+                    <asp:TextBox ID="TBPname" runat="server" CssClass="form-input"></asp:TextBox>
+
                     <asp:Label ID="LFname" runat="server" Text="FATHER'S NAME" CssClass="form-label"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RFVFname" runat="server" ErrorMessage="Field Can't be Empty" ControlToValidate="TBFname" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
                     <br />
-                    <input id="Tfname" type="text" class="form-input"/>
-                    
-                    <asp:Label ID="LPhone" runat="server" Text="PHONE NUMBER" CssClass="form-label"></asp:Label>
+                    <asp:TextBox ID="TBFname" runat="server" CssClass="form-input"></asp:TextBox>
+                    <asp:Label ID="LPhone" runat="server" CssClass="form-label" Text="PHONE NUMBER"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RFVPhone" runat="server" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red" ControlToValidate="TBPhone"></asp:RequiredFieldValidator>
                     <br />
-                    <input id="TPhone" type="text" class="form-input"/>
-                    
-                    <asp:Label ID="LEmail" runat="server" Text="EMAIL" CssClass="form-label"></asp:Label>
+                    <asp:TextBox ID="TBPhone" runat="server" CssClass="form-input" TextMode="Phone"></asp:TextBox>
+                    <asp:Label ID="LEmail" runat="server" CssClass="form-label" Text="EMAIL"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RFVEmail" runat="server" ErrorMessage="Field Can't be Empty" ControlToValidate="TBEmail" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
                     <br />
-                    <input id="TEmail" type="text" class="form-input email-input"/>
-                    
-                    <asp:Label ID="LGender" runat="server" Text="GENDER" CssClass="form-label"></asp:Label>
+                    <asp:TextBox ID="TBEmail" runat="server" CssClass="form-input" TextMode="Email"></asp:TextBox>
+                    <asp:Label ID="LGender" runat="server" CssClass="form-label" Text="GENDER"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RFVGender" runat="server" ControlToValidate="RBGender" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
                     <br />
-                    <asp:RadioButtonList ID="RBGender" runat="server" Height="83px" Width="430px" CssClass="auto-style6" Font-Size="Small">
+                    <asp:RadioButtonList ID="RBGender" runat="server" CssClass="auto-style6" Font-Size="Small" Height="83px" Width="430px">
                         <asp:ListItem>MALE</asp:ListItem>
                         <asp:ListItem>FEMALE</asp:ListItem>
                     </asp:RadioButtonList>
-                    
-                    <asp:Label ID="LDob" runat="server" Text="DATE OF BIRTH" CssClass="form-label "></asp:Label>
+                    <asp:Label ID="LDob" runat="server" CssClass="form-label " Text="DATE OF BIRTH"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RFVDob" runat="server" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red" ControlToValidate="TBDob"></asp:RequiredFieldValidator>
                     <br />
-                    <input id="TDob" type="text" class="form-input form-input-half"/>
+                    <asp:TextBox ID="TBDob" runat="server" CssClass="form-input form-input-half" TextMode="Date"></asp:TextBox>
                     <asp:ImageButton ID="ImageButtonCal" runat="server" ImageUrl="~/img/iconcalendar.png" OnClick="ImageButtonCal_Click" />
-                    <asp:Calendar ID="CalendarDob" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="220px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="344px" OnSelectionChanged="CalendarDob_SelectionChanged" OnDayRender="CalendarDob_DayRender">
+                    <asp:Calendar ID="CalendarDob" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="220px" NextPrevFormat="FullMonth" OnDayRender="CalendarDob_DayRender" OnSelectionChanged="CalendarDob_SelectionChanged" TitleFormat="Month" Width="344px">
                         <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
                         <DayStyle Width="14%" />
                         <NextPrevStyle Font-Size="8pt" ForeColor="White" />
@@ -92,44 +110,50 @@
                         <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
                         <TodayDayStyle BackColor="#CCCC99" />
                     </asp:Calendar>
-                    <br /> <br />
+                    <br />
+                    <br />
                     <asp:Label ID="LAge" runat="server" CssClass="form-label" Text="AGE : "></asp:Label>
-                    <asp:Label ID="LDispAge" runat="server" Text="Label" CssClass="form-label"></asp:Label>
-                    <br /> <br />
-                    <asp:Label ID="LAddress" runat="server" Text="ADDRESS" CssClass="form-label"></asp:Label>
+                    <asp:Label ID="LDispAge" runat="server" CssClass="form-label" Text="Label"></asp:Label>
                     <br />
-                    <textarea id="TextArea1" cols="20" rows="7" class="form-input" style="resize:none; width:100%   ; height:100px;"></textarea>
-
-                    <asp:Label ID="LVillage" runat="server" Text="VILLAGE" CssClass="form-label"></asp:Label>
                     <br />
-                    <input id="TVillage" type="text" class="form-input"/>
-
-                    <asp:Label ID="LPost" runat="server" Text="POST OFFICE" CssClass="form-label"></asp:Label>
+                    <asp:Label ID="LAddress" runat="server" CssClass="form-label" Text="ADDRESS"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RFVAddress" runat="server" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red" ControlToValidate="TBAddress"></asp:RequiredFieldValidator>
                     <br />
-                    <input id="TPost" type="text" class="form-input"/>
-
-                    <asp:Label ID="LPolice" runat="server" Text="POLICE OFFICE" CssClass="form-label"></asp:Label>
+                    <asp:TextBox ID="TBAddress" runat="server" CssClass="auto-style8" Height="127px" TextMode="MultiLine" Width="486px"></asp:TextBox>
+                    <asp:Label ID="LVillage" runat="server" CssClass="form-label" Text="VILLAGE"></asp:Label>
                     <br />
-                    <input id="TPolice" type="text" class="form-input" />
-
-                    <asp:Label ID="LDistrict" runat="server" Text="DISTRICT" CssClass="form-label"></asp:Label>
+                    <asp:TextBox ID="TBVillage" runat="server" CssClass="form-input"></asp:TextBox>
+                    <asp:Label ID="LPost" runat="server" CssClass="form-label" Text="POST OFFICE"></asp:Label>
                     <br />
-                    <input id="TDistrict" type="text" class="form-input"/>
-
-                    <asp:Label ID="LState" runat="server" Text="STATE" CssClass="form-label"></asp:Label>
+                    <asp:TextBox ID="TBPO" runat="server" CssClass="form-input"></asp:TextBox>
+                    <asp:Label ID="LPolice" runat="server" CssClass="form-label" Text="POLICE OFFICE"></asp:Label>
                     <br />
-                    <select id="Select1" class ="form-input">
-                        <option>BIHAR</option>
-                        <option>JHARKHAND</option>
-                    </select>
-
-                    <asp:Label ID="LPincode" runat="server" Text="PIN CODE" CssClass="form-label "></asp:Label>
+                    <asp:TextBox ID="TBPS" runat="server" CssClass="form-input"></asp:TextBox>
+                    <asp:Label ID="LDistrict" runat="server" CssClass="form-label" Text="DISTRICT"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RFVDistrict" runat="server" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red" ControlToValidate="TBDistrict"></asp:RequiredFieldValidator>
                     <br />
-                    <input id="TPin" type="text" class="form-input form-input-half"/>
+                    <asp:TextBox ID="TBDistrict" runat="server" CssClass="form-input"></asp:TextBox>
+                    <asp:Label ID="LState" runat="server" CssClass="form-label" Text="STATE"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RFVState" runat="server" ControlToValidate="DropDownState" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <br />
+                    <asp:DropDownList ID="DropDownState" runat="server" CssClass="form-input">
+                        <asp:ListItem>BIHAR</asp:ListItem>
+                        <asp:ListItem>JHARKHAND</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:Label ID="LPincode" runat="server" CssClass="form-label " Text="PIN CODE"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RFVPin" runat="server" ControlToValidate="TBPincode" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <br />
+                    <asp:TextBox ID="TBPincode" runat="server" CssClass="form-input form-input-half" TextMode="Number"></asp:TextBox>
                     <br />
                     <asp:Label ID="Label1" runat="server" Text="AADHAR NUMBER" CssClass="form-label"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RFVAadhar" runat="server" ControlToValidate="TBAadhar" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
                     <br />
-                    <input id="TAadhar" type="text" class="form-input"/>
+                    <asp:TextBox ID="TBAadhar" runat="server" CssClass="form-input" TextMode="Number"></asp:TextBox>
                     <br />
                     <br />
                     <asp:Button ID="BReset" runat="server" Height="40px" Text="RESET" Width="104px" CssClass="booknow" />
