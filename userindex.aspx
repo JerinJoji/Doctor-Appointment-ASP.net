@@ -195,7 +195,7 @@
                     </table>
                 </div>
             </div>
-        
+            <p style="text-align:center;">PLEASE NOTE DOWN YOUR <b>OPD NUMBER</b> GIVEN ABOVE SO THAT YOU CAN LOGIN NEXT TIME YOU VISIT</p>
             <div style="padding:50px 14% 30px 15%;">
                 <asp:Button ID="Buttonbookappoint" runat="server" Text="APPOINTMENT" OnClick="Buttonbookappoint_Click" CssClass="tabs" />&nbsp;
                 <asp:Button ID="Buttonrecord" runat="server" Text="RECORD" OnClick="Buttonrecord_Click" CssClass="tabs" />
