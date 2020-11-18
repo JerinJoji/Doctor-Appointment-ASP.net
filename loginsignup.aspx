@@ -47,8 +47,14 @@
             <asp:Panel ID="PanelLogin" runat="server">
                 <div style="padding: 50px 50px 50px 50px" class="auto-style7">
                     <br />
-                    <input id="TOpd" type="text" class="form-input" placeholder="Enter Your OPD No."/>
+                    <asp:Label ID="Label2" runat="server" CssClass="form-label" Text="Email ID"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Required" Font-Size="Small" ForeColor="Red" ControlToValidate="TEmail"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="TEmail" runat="server" CssClass="form-input"></asp:TextBox>
                     <br />
+                    <asp:Label ID="Label3" runat="server" CssClass="form-label" Text="Password"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TPassword" ErrorMessage="Required" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:TextBox ID="TPassword" runat="server" CssClass="form-input" placeholder="Enter Admin Password"></asp:TextBox>
                     <br />
                     <br />
@@ -57,7 +63,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;<asp:Button ID="BLogin" runat="server" CssClass="booknow" Height="40px" Text="LOGIN" Width="104px" OnClick="Button1_Click" />
                     <br />
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="LForgotID" runat="server" Font-Size="Small">Forgot OPD ID?</asp:LinkButton>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="LForgotID" runat="server" Font-Size="Small">Forgot Password?</asp:LinkButton>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:LinkButton ID="Lcreateaccount" runat="server" Font-Size="Small">Create Account</asp:LinkButton>
                     <br />

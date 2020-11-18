@@ -12,6 +12,9 @@ namespace ProjectDesignDemo
 {
     public partial class loginsignup : System.Web.UI.Page
     {
+        public static string userEmail = "";
+        public static string userpassword = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -22,7 +25,6 @@ namespace ProjectDesignDemo
                 LoginButton.ForeColor = System.Drawing.Color.Black;
                 RegisterButton.BackColor = Color.FromName("#c23838");
                 RegisterButton.ForeColor = Color.FromName("#fff");
-                TPassword.Visible = false;
             }
         }
 
