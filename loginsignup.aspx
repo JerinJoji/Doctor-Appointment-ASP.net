@@ -99,22 +99,6 @@
                     <asp:RequiredFieldValidator ID="RFVDob" runat="server" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red" ControlToValidate="TBDob"></asp:RequiredFieldValidator>
                     <br />
                     <asp:TextBox ID="TBDob" runat="server" CssClass="form-input form-input-half" TextMode="Date"></asp:TextBox>
-                    <asp:ImageButton ID="ImageButtonCal" runat="server" ImageUrl="~/img/iconcalendar.png" OnClick="ImageButtonCal_Click" />
-                    <asp:Calendar ID="CalendarDob" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="220px" NextPrevFormat="FullMonth" OnDayRender="CalendarDob_DayRender" OnSelectionChanged="CalendarDob_SelectionChanged" TitleFormat="Month" Width="344px">
-                        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
-                        <DayStyle Width="14%" />
-                        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
-                        <OtherMonthDayStyle ForeColor="#999999" />
-                        <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
-                        <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
-                        <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
-                        <TodayDayStyle BackColor="#CCCC99" />
-                    </asp:Calendar>
-                    <br />
-                    <br />
-                    <asp:Label ID="LAge" runat="server" CssClass="form-label" Text="AGE : "></asp:Label>
-                    <asp:Label ID="LDispAge" runat="server" CssClass="form-label" Text="Label"></asp:Label>
-                    <br />
                     <br />
                     <asp:Label ID="LAddress" runat="server" CssClass="form-label" Text="ADDRESS"></asp:Label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

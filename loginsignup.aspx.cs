@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace ProjectDesignDemo
 {
@@ -14,7 +16,6 @@ namespace ProjectDesignDemo
         {
             if (!IsPostBack)
             {
-                CalendarDob.Visible = false;
                 PanelLogin.Visible = true;
                 PanelRegister.Visible = false;
                 LoginButton.BackColor = System.Drawing.Color.White;
@@ -52,24 +53,91 @@ namespace ProjectDesignDemo
 
         protected void BSubmit_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
 
+            String insertSql = "INSERT INTO Patients(PatientName,FathersName,DateofBirth,Address,Village,PostOffice,PoliceStation,District,State,pincode,AadharNo,Phone,Email,Gender)" +
+                "values (@PatientName,@FathersName,@DateofBirth,@Address,@Village,@PostOffice,@PoliceStation,@District,@State,@pincode,@AadharNo,@Phone,@Email,@Gender)";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = insertSql;
+
+            SqlParameter PatientName = new SqlParameter("@PatientName",SqlDbType.VarChar,50);
+            PatientName.Value = TBPname.Text.ToString();
+            cmd.Parameters.Add(PatientName);
+
+            SqlParameter FathersName = new SqlParameter("@FathersName", SqlDbType.VarChar, 50);
+            FathersName.Value = TBFname.Text.ToString();
+            cmd.Parameters.Add(FathersName);
+
+            SqlParameter DOB = new SqlParameter("@DateofBirth", SqlDbType.Date);
+            DOB.Value = TBDob.Text.ToString();
+            cmd.Parameters.Add(DOB);
+
+            SqlParameter Address = new SqlParameter("@Address", SqlDbType.VarChar,50);
+            Address.Value = TBAddress.Text.ToString();
+            cmd.Parameters.Add(Address);
+
+            SqlParameter Village = new SqlParameter("@Village", SqlDbType.VarChar,50);
+            Village.Value = TBVillage.Text.ToString();
+            cmd.Parameters.Add(Village);
+
+            SqlParameter PostOffice = new SqlParameter("@PostOffice", SqlDbType.VarChar,50);
+            PostOffice.Value = TBPO.Text.ToString();
+            cmd.Parameters.Add(PostOffice);
+
+            SqlParameter PoliceStation = new SqlParameter("@PoliceStation", SqlDbType.VarChar,50);
+            PoliceStation.Value = TBPS.Text.ToString();
+            cmd.Parameters.Add(PoliceStation);
+
+            SqlParameter District = new SqlParameter("@District", SqlDbType.VarChar,50);
+            District.Value = TBDistrict.Text.ToString();
+            cmd.Parameters.Add(District);
+
+            SqlParameter State = new SqlParameter("@State", SqlDbType.VarChar,50);
+            State.Value = DropDownState.SelectedItem.ToString();
+            cmd.Parameters.Add(State);
+
+            SqlParameter pincode = new SqlParameter("@pincode", SqlDbType.VarChar, 50);
+            pincode.Value = TBPincode.Text.ToString();
+            cmd.Parameters.Add(pincode);
+
+            SqlParameter AadharNo = new SqlParameter("@AadharNo", SqlDbType.VarChar, 50);
+            AadharNo.Value = TBAadhar.Text.ToString();
+            cmd.Parameters.Add(AadharNo);
+
+            SqlParameter Phone = new SqlParameter("@Phone", SqlDbType.BigInt);
+            Phone.Value = TBPhone.Text.ToString();
+            cmd.Parameters.Add(Phone);
+
+            SqlParameter Email = new SqlParameter("@Email", SqlDbType.VarChar, 50);
+            Email.Value = TBEmail.Text.ToString();
+            cmd.Parameters.Add(Email);
+
+            SqlParameter Gender = new SqlParameter("@Gender", SqlDbType.VarChar, 50);
+            Gender.Value = RBGender.SelectedItem.ToString();
+            cmd.Parameters.Add(Gender);
+
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch(SqlException ex)
+            {
+                string errorMessage = "Error in Registering User";
+                errorMessage += ex.Message;
+                throw new Exception(errorMessage);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         protected void CalendarDob_SelectionChanged(object sender, EventArgs e)
         {
 
-        }
-
-        protected void ImageButtonCal_Click(object sender, ImageClickEventArgs e)
-        {
-            if (CalendarDob.Visible)
-            {
-                CalendarDob.Visible = false;
-            }
-            else
-            {
-                CalendarDob.Visible = true;
-            }
         }
 
         protected void CalendarDob_DayRender(object sender, DayRenderEventArgs e)
@@ -80,5 +148,7 @@ namespace ProjectDesignDemo
                 e.Cell.ForeColor = System.Drawing.Color.LightGray;
             }
         }
+
+        
     }
 }
