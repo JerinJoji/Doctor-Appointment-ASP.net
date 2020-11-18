@@ -55,8 +55,8 @@ namespace ProjectDesignDemo
         {
             SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
 
-            String insertSql = "INSERT INTO Patients(PatientName,FathersName,DateofBirth,Address,Village,PostOffice,PoliceStation,District,State,pincode,AadharNo,Phone,Email,Gender)" +
-                "values (@PatientName,@FathersName,@DateofBirth,@Address,@Village,@PostOffice,@PoliceStation,@District,@State,@pincode,@AadharNo,@Phone,@Email,@Gender)";
+            String insertSql = "INSERT INTO Patients(PatientName,FathersName,DateofBirth,Address,Village,PostOffice,PoliceStation,District,State,pincode,AadharNo,Phone,Email,Gender, Password)" +
+                "values (@PatientName,@FathersName,@DateofBirth,@Address,@Village,@PostOffice,@PoliceStation,@District,@State,@pincode,@AadharNo,@Phone,@Email,@Gender,@Password)";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandType = CommandType.Text;
@@ -114,6 +114,10 @@ namespace ProjectDesignDemo
             Email.Value = TBEmail.Text.ToString();
             cmd.Parameters.Add(Email);
 
+            SqlParameter Password = new SqlParameter("@Password", SqlDbType.VarChar, 50);
+            Password.Value = TBPASSWORD.Text.ToString();
+            cmd.Parameters.Add(Password);
+
             SqlParameter Gender = new SqlParameter("@Gender", SqlDbType.VarChar, 50);
             Gender.Value = RBGender.SelectedItem.ToString();
             cmd.Parameters.Add(Gender);
@@ -122,6 +126,7 @@ namespace ProjectDesignDemo
             {
                 con.Open();
                 cmd.ExecuteNonQuery();
+                Response.Redirect("userindex.aspx");
             }
             catch(SqlException ex)
             {

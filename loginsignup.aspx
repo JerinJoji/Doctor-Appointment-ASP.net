@@ -86,6 +86,11 @@
                     <asp:RequiredFieldValidator ID="RFVEmail" runat="server" ErrorMessage="Field Can't be Empty" ControlToValidate="TBEmail" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
                     <br />
                     <asp:TextBox ID="TBEmail" runat="server" CssClass="form-input" TextMode="Email"></asp:TextBox>
+                    <asp:Label ID="TBPASSWORD" runat="server" CssClass="form-label" Text="PASSWORD"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TBEmail" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <br />
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-input" TextMode="Password"></asp:TextBox>
                     <asp:Label ID="LGender" runat="server" CssClass="form-label" Text="GENDER"></asp:Label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:RequiredFieldValidator ID="RFVGender" runat="server" ControlToValidate="RBGender" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
