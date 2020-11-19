@@ -50,7 +50,40 @@ namespace ProjectDesignDemo
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("userindex.aspx");
+            if (TEmail.Text == "" || TPassword.Text == "")
+            {
+                lbloginmsg.Text = "Field Can't Be Empty";
+                lbloginmsg.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                if (TEmail.Text == "admin" && TPassword.Text == "admin")
+                {
+                    lbloginmsg.Text = "Admin Login";
+                    lbloginmsg.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
+
+                    SqlCommand cmd = new SqlCommand("SELECT * from Patients where Email = @email and Password = @password", con);
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@email", TEmail.Text);
+                    cmd.Parameters.AddWithValue("@password", TPassword.Text);
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    if (dr.HasRows)
+                    {
+                        Response.Redirect("userindex.aspx");
+                    }
+                    else
+                    {
+                        lbloginmsg.Text = "Incorrect Email/Password";
+                        lbloginmsg.ForeColor = System.Drawing.Color.Red;
+                    }
+                    con.Close();
+                }
+            }
         }
 
         protected void BSubmit_Click(object sender, EventArgs e)
@@ -128,6 +161,8 @@ namespace ProjectDesignDemo
             {
                 con.Open();
                 cmd.ExecuteNonQuery();
+                userEmail = TBEmail.Text;
+                userpassword = TBPASSWORD.Text;
                 Response.Redirect("userindex.aspx");
             }
             catch(SqlException ex)
