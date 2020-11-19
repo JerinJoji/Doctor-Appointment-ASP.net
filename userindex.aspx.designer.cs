@@ -42,13 +42,13 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Lpuser control.
+        /// Lloggeduser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lpuser;
+        protected global::System.Web.UI.WebControls.Label Lloggeduser;
 
         /// <summary>
         /// Linklogout control.
@@ -60,58 +60,58 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.LinkButton Linklogout;
 
         /// <summary>
-        /// Lpid control.
+        /// LDispOPD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lpid;
+        protected global::System.Web.UI.WebControls.Label LDispOPD;
 
         /// <summary>
-        /// Lpname control.
+        /// LDispPname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lpname;
+        protected global::System.Web.UI.WebControls.Label LDispPname;
 
         /// <summary>
-        /// Lpdob control.
+        /// LDispDob control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lpdob;
+        protected global::System.Web.UI.WebControls.Label LDispDob;
 
         /// <summary>
-        /// Lpage control.
+        /// LDispAadhar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lpage;
+        protected global::System.Web.UI.WebControls.Label LDispAadhar;
 
         /// <summary>
-        /// Label3 control.
+        /// LDispPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label LDispPhone;
 
         /// <summary>
-        /// Label4 control.
+        /// LDispEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label LDispEmail;
 
         /// <summary>
         /// Buttonbookappoint control.

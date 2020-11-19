@@ -12,9 +12,7 @@ namespace ProjectDesignDemo
 {
     public partial class loginsignup : System.Web.UI.Page
     {
-        public static string userEmail = "";
-        public static string userpassword = "";
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -57,7 +55,7 @@ namespace ProjectDesignDemo
             }
             else
             {
-                if (TEmail.Text == "admin" && TPassword.Text == "admin")
+                if (TEmail.Text == "admin@khfh.com" && TPassword.Text == "admin")
                 {
                     lbloginmsg.Text = "Admin Login";
                     lbloginmsg.ForeColor = System.Drawing.Color.Green;
@@ -74,6 +72,8 @@ namespace ProjectDesignDemo
 
                     if (dr.HasRows)
                     {
+                        Session["email"] = TEmail.Text;
+                        Session["password"] = TPassword.Text;
                         Response.Redirect("userindex.aspx");
                     }
                     else
@@ -161,8 +161,8 @@ namespace ProjectDesignDemo
             {
                 con.Open();
                 cmd.ExecuteNonQuery();
-                userEmail = TBEmail.Text;
-                userpassword = TBPASSWORD.Text;
+                Session["email"] = TBEmail.Text;
+                Session["password"] = TBPASSWORD.Text;
                 Response.Redirect("userindex.aspx");
             }
             catch(SqlException ex)

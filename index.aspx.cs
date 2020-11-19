@@ -23,5 +23,10 @@ namespace ProjectDesignDemo
         {
             Response.Redirect("loginsignup.aspx");
         }
+
+        protected void BBookNow_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("loginsignup.aspx");
+        }
     }
 }

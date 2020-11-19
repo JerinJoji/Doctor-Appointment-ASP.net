@@ -41,7 +41,6 @@
                 margin-bottom: 25px;
                 padding: 0px 10px;
                 font-size: 22px;
-                font-variant: all-small-caps;
             }
         </style>
     </head>
@@ -61,16 +60,21 @@
                         
                         <asp:Label ID="Label3" runat="server" CssClass="form-label" Text="Password"></asp:Label>
                         <asp:TextBox ID="TPassword" runat="server" CssClass="form-input" TextMode="Password"></asp:TextBox>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    
-                        <asp:Label ID="lbloginmsg" runat="server" Font-Size="Small"></asp:Label>
-                        <br />
-                        <br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="BLogin" runat="server" CssClass="booknow" Height="40px" OnClick="Button1_Click" Text="LOGIN" Width="104px" />
+                        <center>
+                            <asp:Label ID="lbloginmsg" runat="server" Font-Size="Small"></asp:Label>
+                        </center>
                         <br />
                         <br />
                         
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="LForgotID" runat="server" Font-Size="Small">Forgot Password?</asp:LinkButton>
+                        <center>
+                            <asp:Button ID="BLogin" runat="server" CssClass="booknow" Height="40px" OnClick="Button1_Click" Text="LOGIN" Width="104px" />
+                        </center>
+                        <br />
+                        <br />
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:LinkButton ID="LForgotID" runat="server" Font-Size="Small">Forgot Password?</asp:LinkButton>
+                        
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:LinkButton ID="Lcreateaccount" runat="server" Font-Size="Small">Create Account</asp:LinkButton>
                         <br />

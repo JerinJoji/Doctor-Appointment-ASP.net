@@ -17,6 +17,7 @@ namespace ProjectDesignDemo
                 Panelbookappoint.Visible = true;
                 Panelrecord.Visible = false;
                 CalendarDoa.Visible = false;
+                LDispEmail.Text = Session["email"].ToString();
             }
             
         }

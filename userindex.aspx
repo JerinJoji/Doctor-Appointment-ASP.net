@@ -146,9 +146,9 @@
                     </td>
                     
                     <td class="auto-style5">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span class="glyphicon glyphicon-user" style="left: 0px; top: -1px; height: 24px; color:white;">&nbsp;</span><asp:Label ID="Label2" runat="server" Text="Welcome" Font-Size="Large" ForeColor="White"></asp:Label>&nbsp;
-                        <asp:Label ID="Lpuser" runat="server" Font-Size="Large" ForeColor="White" Text="Label"></asp:Label>
+                        <asp:Label ID="Lloggeduser" runat="server" Font-Size="Large" ForeColor="White" Text=""></asp:Label>
                         
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span class="glyphicon glyphicon-log-out" style="left: 0px; top: -1px; height: 24px; color:white;">&nbsp;</span>
@@ -162,40 +162,34 @@
                     <table class="auto-style4" style="border:2px solid black">
                         <tr>
                             <td class="auto-style6 tdcenter tdborder" style="font-size: 17px; font-weight: 400;">
-                                OPD No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                                <asp:Label ID="Lpid" runat="server" Text="Label"></asp:Label>
+                                <b>OPD Number - </b><asp:Label ID="LDispOPD" runat="server" Text=""></asp:Label>
                             </td>
                             <td class="auto-style2 tdcenter tdpadding tdborder" style="font-size: 17px; font-weight: 400;">
-                                Patient Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                                <asp:Label ID="Lpname" runat="server" Text="Label"></asp:Label>
+                                <b>Patient Name - </b><asp:Label ID="LDispPname" runat="server" Text=""></asp:Label>
                             </td>
                         </tr>
                         
                         <tr>
                             <td class="auto-style6 tdcenter tdborder" style="font-size: 17px; font-weight: 400;">
-                                Date Of Birth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Label ID="Lpdob" runat="server" Text="Label"></asp:Label>
+                                <b>Date Of Birth - </b><asp:Label ID="LDispDob" runat="server" Text=""></asp:Label>
                             </td>
                             <td class="auto-style2 tdcenter tdpadding tdborder" style="font-size: 17px; font-weight: 400;">
-                                Patient Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Label ID="Lpage" runat="server" Text="Label"></asp:Label>
+                                <b>Aadhar Number - </b><asp:Label ID="LDispAadhar" runat="server" Text=""></asp:Label>
                             </td>
                         </tr>
                 
                         <tr>
                             <td class="auto-style6 tdcenter tdborder" style="font-size: 17px; font-weight: 400;">
-                                Phone Number&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                                <b>Phone Number - </b><asp:Label ID="LDispPhone" runat="server" Text=""></asp:Label>
                             </td>
                             <td class="auto-style2 tdcenter tdpadding tdborder" style="font-size: 17px; font-weight: 400;">
-                                Email:-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                                <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                                <b>Email - </b><asp:Label ID="LDispEmail" runat="server" Text=""></asp:Label>
                             </td>
                         </tr>
                     </table>
                 </div>
             </div>
-            <p style="text-align:center;">PLEASE NOTE DOWN YOUR <b>OPD NUMBER</b> GIVEN ABOVE SO THAT YOU CAN LOGIN NEXT TIME YOU VISIT</p>
+            <p style="text-align:center;">PLEASE NOTE DOWN YOUR <b>OPD NUMBER</b> GIVEN ABOVE.</p>
             <div style="padding:50px 14% 30px 15%;">
                 <asp:Button ID="Buttonbookappoint" runat="server" Text="APPOINTMENT" OnClick="Buttonbookappoint_Click" CssClass="tabs" />&nbsp;
                 <asp:Button ID="Buttonrecord" runat="server" Text="RECORD" OnClick="Buttonrecord_Click" CssClass="tabs" />

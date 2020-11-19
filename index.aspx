@@ -34,11 +34,11 @@
     </table>
         <div style="padding:5% 10%;">
             <div style="padding:6% 0; text-align:center;">
-                <p>Now we Also started taking online appointments. Click below to book appointments.</p>
+                <p>Now we also started taking Online Appointments. Click below to book appointments.</p>
                 <p>Doctor Schedule is given below for your convenience.</p>
                 <p>Offline Registration :- 8:00 AM - 10:00AM</p>
                 <p>&nbsp;</p>
-                <asp:Button ID="BBookNow" runat="server" Text="Book Appointment" CssClass="booknow" Height="47px" Width="205px"/>
+                <asp:Button ID="BBookNow" runat="server" Text="Book Appointment" CssClass="booknow" Height="47px" Width="205px" OnClick="BBookNow_Click"/>
             </div>
             <div>
                 <h3>MEDICAL</h3>
