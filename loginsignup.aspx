@@ -40,7 +40,7 @@
                 margin-top: 6px;
                 margin-bottom: 25px;
                 padding: 0px 10px;
-                font-size: 22px;
+                font-size: 17px;
             }
         </style>
     </head>

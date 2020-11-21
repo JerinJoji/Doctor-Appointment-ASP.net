@@ -163,6 +163,7 @@ namespace ProjectDesignDemo
                 cmd.ExecuteNonQuery();
                 Session["email"] = TBEmail.Text;
                 Session["password"] = TBPASSWORD.Text;
+
                 Response.Redirect("userindex.aspx");
             }
             catch(SqlException ex)
@@ -176,21 +177,5 @@ namespace ProjectDesignDemo
                 con.Close();
             }
         }
-
-        protected void CalendarDob_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void CalendarDob_DayRender(object sender, DayRenderEventArgs e)
-        {
-            if (e.Day.Date > DateTime.Now.Date)
-            {
-                e.Day.IsSelectable = false;
-                e.Cell.ForeColor = System.Drawing.Color.LightGray;
-            }
-        }
-
-        
     }
 }

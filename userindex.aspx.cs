@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,9 +19,36 @@ namespace ProjectDesignDemo
                 Panelbookappoint.Visible = true;
                 Panelrecord.Visible = false;
                 CalendarDoa.Visible = false;
+
+                SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
+
+                SqlCommand cmd = new SqlCommand("SELECT * from Patients where Email = @email and Password = @password", conn);
+                conn.Open();
+                cmd.Parameters.AddWithValue("@email", Session["email"]);
+                cmd.Parameters.AddWithValue("@password", Session["password"]);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Session["opdno"] = dr.GetValue(0).ToString();
+                    Session["Pname"] = dr.GetValue(1).ToString();
+                    Session["Fname"] = dr.GetValue(2).ToString();
+                    Session["DOB"] = dr.GetValue(3).ToString();
+                    Session["address"] = dr.GetValue(4).ToString();
+                    Session["district"] = dr.GetValue(8).ToString();
+                    Session["state"] = dr.GetValue(9).ToString();
+                    Session["pincode"] = dr.GetValue(10).ToString();
+                    Session["aadhar"] = dr.GetValue(11).ToString();
+                    Session["phone"] = dr.GetValue(12).ToString();
+                }
+                
+                LDispOPD.Text = Session["opdno"].ToString();
+                LDispPname.Text = Session["Pname"].ToString();
                 LDispEmail.Text = Session["email"].ToString();
+                LDispAadhar.Text = Session["aadhar"].ToString();
+                LDispDob.Text = Session["DOB"].ToString();
+                LDispPhone.Text = Session["phone"].ToString();
             }
-            
+
         }
 
         protected void Buttonbookappoint_Click(object sender, EventArgs e)

@@ -44,7 +44,7 @@
             }
         
             .tdpadding{
-                padding: 20px 20px 24px 20px;
+                padding: 20px 20px 24px 100px;
             }
             
             .tdright{
@@ -161,35 +161,37 @@
                 <div style="border: 10px outset">
                     <table class="auto-style4" style="border:2px solid black">
                         <tr>
-                            <td class="auto-style6 tdcenter tdborder" style="font-size: 17px; font-weight: 400;">
+                            <td class="auto-style6 tdborder tdpadding" style="font-size: 17px; font-weight: 400;">
                                 <b>OPD Number - </b><asp:Label ID="LDispOPD" runat="server" Text=""></asp:Label>
                             </td>
-                            <td class="auto-style2 tdcenter tdpadding tdborder" style="font-size: 17px; font-weight: 400;">
+                            <td class="auto-style2 tdpadding tdborder" style="font-size: 17px; font-weight: 400;">
                                 <b>Patient Name - </b><asp:Label ID="LDispPname" runat="server" Text=""></asp:Label>
                             </td>
                         </tr>
                         
                         <tr>
-                            <td class="auto-style6 tdcenter tdborder" style="font-size: 17px; font-weight: 400;">
+                            <td class="auto-style6 tdborder tdpadding" style="font-size: 17px; font-weight: 400;">
                                 <b>Date Of Birth - </b><asp:Label ID="LDispDob" runat="server" Text=""></asp:Label>
                             </td>
-                            <td class="auto-style2 tdcenter tdpadding tdborder" style="font-size: 17px; font-weight: 400;">
+                            <td class="auto-style2 tdpadding tdborder" style="font-size: 17px; font-weight: 400;">
                                 <b>Aadhar Number - </b><asp:Label ID="LDispAadhar" runat="server" Text=""></asp:Label>
                             </td>
                         </tr>
                 
                         <tr>
-                            <td class="auto-style6 tdcenter tdborder" style="font-size: 17px; font-weight: 400;">
+                            <td class="auto-style6 tdborder tdpadding" style="font-size: 17px; font-weight: 400;">
                                 <b>Phone Number - </b><asp:Label ID="LDispPhone" runat="server" Text=""></asp:Label>
                             </td>
-                            <td class="auto-style2 tdcenter tdpadding tdborder" style="font-size: 17px; font-weight: 400;">
+                            <td class="auto-style2 tdpadding tdborder" style="font-size: 17px; font-weight: 400;">
                                 <b>Email - </b><asp:Label ID="LDispEmail" runat="server" Text=""></asp:Label>
                             </td>
                         </tr>
                     </table>
                 </div>
             </div>
+            
             <p style="text-align:center;">PLEASE NOTE DOWN YOUR <b>OPD NUMBER</b> GIVEN ABOVE.</p>
+            
             <div style="padding:50px 14% 30px 15%;">
                 <asp:Button ID="Buttonbookappoint" runat="server" Text="APPOINTMENT" OnClick="Buttonbookappoint_Click" CssClass="tabs" />&nbsp;
                 <asp:Button ID="Buttonrecord" runat="server" Text="RECORD" OnClick="Buttonrecord_Click" CssClass="tabs" />
