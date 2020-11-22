@@ -20,7 +20,7 @@ namespace ProjectDesignDemo
                 Panelrecord.Visible = false;
                 CalendarDoa.Visible = false;
 
-               /* SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
+                SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
 
                 SqlCommand cmd = new SqlCommand("SELECT * from Patients where Email = @email and Password = @password", conn);
                 conn.Open();
@@ -47,7 +47,7 @@ namespace ProjectDesignDemo
                 LDispAadhar.Text = Session["aadhar"].ToString();
                 LDispDob.Text = Session["DOB"].ToString();
                 LDispPhone.Text = Session["phone"].ToString();  
-                conn.Close();*/
+                conn.Close();
             }
         }
 
