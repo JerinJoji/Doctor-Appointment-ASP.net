@@ -68,15 +68,15 @@
                         
                         <center>
                             <asp:Button ID="BLogin" runat="server" CssClass="booknow" Height="40px" OnClick="Button1_Click" Text="LOGIN" Width="104px" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="BLCancel" runat="server" CssClass="booknow" Height="40px" Text="CANCEL" Width="104px" OnClick="BLCancel_Click" />
                         </center>
                         <br />
                         <br />
 
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:LinkButton ID="LForgotID" runat="server" Font-Size="Small">Forgot Password?</asp:LinkButton>
-                        
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:LinkButton ID="Lcreateaccount" runat="server" Font-Size="Small">Create Account</asp:LinkButton>
+                        <center>
+                            <asp:LinkButton ID="LForgotID" runat="server" Font-Size="Small">Forgot Password?</asp:LinkButton>
+                        </center>
                         <br />
                     </div>
                 </asp:Panel>

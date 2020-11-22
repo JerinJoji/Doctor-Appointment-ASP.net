@@ -105,6 +105,15 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.Button BLogin;
 
         /// <summary>
+        /// BLCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BLCancel;
+
+        /// <summary>
         /// LForgotID control.
         /// </summary>
         /// <remarks>
@@ -112,15 +121,6 @@ namespace ProjectDesignDemo
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LForgotID;
-
-        /// <summary>
-        /// Lcreateaccount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Lcreateaccount;
 
         /// <summary>
         /// PanelRegister control.
