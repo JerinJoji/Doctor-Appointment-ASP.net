@@ -212,7 +212,9 @@
                                             </td>
 
                                             <td class="auto-style7">
-                                                <asp:DropDownList ID="DropDownList1" runat="server" CssClass ="form-input" Width="347px"></asp:DropDownList>
+                                                <asp:DropDownList ID="ddlDept" runat="server" CssClass ="form-input" Width="347px" DataSourceID="SqlDataSource1" DataTextField="DeptName" DataValueField="DeptName" AutoPostBack="True" OnSelectedIndexChanged="ddlDept_SelectedIndexChanged">
+                                                </asp:DropDownList>
+                                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [DeptName] FROM [Department]"></asp:SqlDataSource>
                                             </td>
                                         </tr>
 
@@ -224,7 +226,8 @@
                                             </td>
 
                                             <td class="auto-style20">
-                                                <asp:DropDownList ID="DropDownList2" runat="server" CssClass ="form-input" Width="347px"></asp:DropDownList>
+                                                <asp:DropDownList ID="ddlDoctor" runat="server" CssClass ="form-input" Width="347px">
+                                                </asp:DropDownList>
                                             </td>
                                         </tr>
 

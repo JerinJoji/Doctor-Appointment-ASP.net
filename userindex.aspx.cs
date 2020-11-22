@@ -20,7 +20,7 @@ namespace ProjectDesignDemo
                 Panelrecord.Visible = false;
                 CalendarDoa.Visible = false;
 
-                SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
+               /* SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
 
                 SqlCommand cmd = new SqlCommand("SELECT * from Patients where Email = @email and Password = @password", conn);
                 conn.Open();
@@ -46,9 +46,9 @@ namespace ProjectDesignDemo
                 LDispEmail.Text = Session["email"].ToString();
                 LDispAadhar.Text = Session["aadhar"].ToString();
                 LDispDob.Text = Session["DOB"].ToString();
-                LDispPhone.Text = Session["phone"].ToString();
+                LDispPhone.Text = Session["phone"].ToString();  
+                conn.Close();*/
             }
-
         }
 
         protected void Buttonbookappoint_Click(object sender, EventArgs e)
@@ -102,6 +102,21 @@ namespace ProjectDesignDemo
         protected void backtoappointview_Click(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 0;
+        }
+
+        protected void ddlDept_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
+            SqlCommand query = new SqlCommand("SELECT DocName FROM Doctor JOIN Department ON Doctor.DepartId = Department.DeptId AND Department.DeptName = @ddlItem",conn);
+            conn.Open();
+            query.Parameters.AddWithValue("@ddlItem", ddlDept.SelectedItem.Value);
+            SqlDataReader dr = query.ExecuteReader();
+            ddlDoctor.Items.Clear();
+            while (dr.Read())
+            {
+                ddlDoctor.Items.Add(dr.GetSqlString(0).ToString());
+            }
+
         }
     }
 }
