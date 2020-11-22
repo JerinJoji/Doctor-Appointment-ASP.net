@@ -46,7 +46,8 @@ namespace ProjectDesignDemo
                 LDispEmail.Text = Session["email"].ToString();
                 LDispAadhar.Text = Session["aadhar"].ToString();
                 LDispDob.Text = Session["DOB"].ToString();
-                LDispPhone.Text = Session["phone"].ToString();  
+                LDispPhone.Text = Session["phone"].ToString();
+                Lloggeduser.Text = Session["Pname"].ToString();
                 conn.Close();
             }
         }
