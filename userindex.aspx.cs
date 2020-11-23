@@ -20,7 +20,7 @@ namespace ProjectDesignDemo
                 Panelrecord.Visible = false;
                 CalendarDoa.Visible = false;
 
-                SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
+                /*SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
 
                 SqlCommand cmd = new SqlCommand("SELECT * from Patients where Email = @email and Password = @password", conn);
                 conn.Open();
@@ -48,7 +48,7 @@ namespace ProjectDesignDemo
                 LDispDob.Text = Session["DOB"].ToString();
                 LDispPhone.Text = Session["phone"].ToString();
                 Lloggeduser.Text = Session["Pname"].ToString();
-                conn.Close();
+                conn.Close();*/
             }
         }
 
@@ -93,6 +93,9 @@ namespace ProjectDesignDemo
         protected void btnAppointment_Click(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 1;
+            lbldepart.Text = ddlDept.SelectedItem.Value;
+            lbldoc.Text = ddlDoctor.SelectedItem.Value;
+            lbladate.Text = TBAppointDate.Text;
         }
 
         protected void gotopaymentview_Click(object sender, EventArgs e)
@@ -117,6 +120,17 @@ namespace ProjectDesignDemo
             {
                 ddlDoctor.Items.Add(dr.GetSqlString(0).ToString());
             }
+
+        }
+
+        protected void CalendarDoa_SelectionChanged(object sender, EventArgs e)
+        {
+            TBAppointDate.Text = CalendarDoa.SelectedDate.ToShortDateString();
+            CalendarDoa.Visible = false;
+        }
+
+        protected void Btnpayonline_Click(object sender, EventArgs e)
+        {
 
         }
     }

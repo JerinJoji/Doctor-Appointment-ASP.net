@@ -243,9 +243,9 @@
                                             </td>
                                             
                                             <td class="auto-style10">
-                                                <asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style11" Width="227px"></asp:TextBox>
+                                                <asp:TextBox ID="TBAppointDate" runat="server" CssClass="auto-style11" Width="227px"></asp:TextBox>
                                                 <asp:ImageButton ID="CalenderImageButton" runat="server" ImageUrl="~/img/iconcalendar.png" Height="30px" Width="31px" OnClick="ImageButton1_Click" />
-                                                <asp:Calendar ID="CalendarDoa" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="212px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="346px" OnDayRender="CalendarDoa_DayRender">
+                                                <asp:Calendar ID="CalendarDoa" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="212px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="346px" OnDayRender="CalendarDoa_DayRender" OnSelectionChanged="CalendarDoa_SelectionChanged">
                                                     <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
                                                     <DayStyle Width="14%" />
                                                     <NextPrevStyle Font-Size="8pt" ForeColor="White" />
@@ -269,8 +269,7 @@
                                                 <center> 
                                                     <asp:Button ID="btnAppointment" runat="server" Text="BOOK APPOINTMENT" CssClass="booknow" OnClick="btnAppointment_Click" />
                                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <asp:Button ID="reset" runat="server" Text="RESET AND CANCEL" CssClass="booknow"></asp:Button>
-                                                </center>
+                                                    </center>
                                             </td>
                                         </tr>
                                         </table>
@@ -359,7 +358,7 @@
                                         <p>YOU CAN PAY ONLINE OR CHOOSE AN OPTION FOR PAYING IN COUNTER</p>
                                         <br />
                                         <br />
-                                        <asp:Button ID="Btnpayonline" runat="server" Text="PAY ONLINE" CssClass="booknow"/>
+                                        <asp:Button ID="Btnpayonline" runat="server" Text="PAY ONLINE" CssClass="booknow" OnClick="Btnpayonline_Click"/>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Button ID="Btnpaycounter" runat="server" Text="PAY AT COUNTER" CssClass="booknow"/>
                                     </div>
