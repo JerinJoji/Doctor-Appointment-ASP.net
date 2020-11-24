@@ -260,7 +260,7 @@
                                                 <tr>
                                                     <td class="auto-style13" colspan="2">
                                                         <center class="auto-style16">
-                                                            <h3>COFIRM APPOINTMENT</h3>
+                                                            <h2 class="form-label" style="font-size:x-large">CONFIRM APPOINTMENT</h2>
                                                         </center>
                                                     </td>
                                                 </tr>
@@ -416,7 +416,7 @@
                                 <SortedDescendingCellStyle BackColor="#FCF6C0" Width="100px"/>
                                 <SortedDescendingHeaderStyle BackColor="#820000" Width="100px"/>
                             </asp:GridView>
-                            <asp:SqlDataSource ID="GridviewallDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [RecordId], [DoctorName], [DepartmentName], [AppointmentDate], [Status] FROM [Appointment] WHERE ([OpdId] = @OpdId)">
+                            <asp:SqlDataSource ID="GridviewallDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [RecordId], [DoctorName], [DepartmentName], [AppointmentDate], [Status] FROM [Appointment] WHERE ([OpdId] = @OpdId) ORDER BY [AppointmentDate]">
                                 <SelectParameters>
                                     <asp:SessionParameter Name="OpdId" SessionField="opdno" Type="Int32" />
                                 </SelectParameters>
