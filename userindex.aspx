@@ -133,6 +133,10 @@
                 font-size: 22px;
                 font-variant: all-small-caps;
             }
+
+            .gridview{
+                overflow: hidden;
+            }
         </style>
     </head>
 
@@ -397,17 +401,17 @@
                             </table>
                         </div>
                         <div style="padding:14px 14px">
-                            <asp:GridView ID="UserrecordGridView" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
-                                <AlternatingRowStyle BackColor="White" />
-                                <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-                                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-                                <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-                                <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-                                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-                                <SortedAscendingCellStyle BackColor="#FDF5AC" />
-                                <SortedAscendingHeaderStyle BackColor="#4D0000" />
-                                <SortedDescendingCellStyle BackColor="#FCF6C0" />
-                                <SortedDescendingHeaderStyle BackColor="#820000" />
+                            <asp:GridView ID="UserrecordGridView" runat="server" CssClass="gridview" ForeColor="#333333" GridLines="None" Font-Size="Medium" Width="100%" AllowSorting="True" >
+                                <AlternatingRowStyle BackColor="White" Width="100px"/>
+                                <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" Width="100px"/>
+                                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" Width="20%"/>
+                                <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" Width="100px"/>
+                                <RowStyle BackColor="#FFFBD6" ForeColor="#333333" Width="100px"/>
+                                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" Width="100px"/>
+                                <SortedAscendingCellStyle BackColor="#FDF5AC" Width="100px"/>
+                                <SortedAscendingHeaderStyle BackColor="#4D0000" Width="100px"/>
+                                <SortedDescendingCellStyle BackColor="#FCF6C0" Width="100px"/>
+                                <SortedDescendingHeaderStyle BackColor="#820000" Width="100px"/>
                             </asp:GridView>
                         </div>
                     </div>

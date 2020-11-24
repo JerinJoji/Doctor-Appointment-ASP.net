@@ -175,6 +175,7 @@ namespace ProjectDesignDemo
                 lblSuccess.ForeColor = System.Drawing.Color.Green;
                 Btnpayonline.Enabled = false;
                 Btnpaycounter.Enabled = false;
+                Response.Redirect("userindex.aspx");
             }
             catch (SqlException ex)
             {
@@ -227,6 +228,7 @@ namespace ProjectDesignDemo
                 lblSuccess.ForeColor = System.Drawing.Color.Green;
                 Btnpayonline.Enabled = false;
                 Btnpaycounter.Enabled = false;
+                Response.Redirect("userindex.aspx");
             }
             catch (SqlException ex)
             {
