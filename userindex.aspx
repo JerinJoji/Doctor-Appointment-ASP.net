@@ -356,6 +356,11 @@
                                         <br />
                                         <br />
                                         <p>YOU CAN PAY ONLINE OR CHOOSE AN OPTION FOR PAYING IN COUNTER</p>
+                                        <p>
+                                            &nbsp;</p>
+                                        <p>
+                                            <asp:Label ID="lblSuccess" runat="server"></asp:Label>
+                                        </p>
                                         <br />
                                         <br />
                                         <asp:Button ID="Btnpayonline" runat="server" Text="PAY ONLINE" CssClass="booknow" OnClick="Btnpayonline_Click"/>
@@ -392,7 +397,7 @@
                             </table>
                         </div>
                         <div style="padding:14px 14px">
-                            <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                            <asp:GridView ID="UserrecordGridView" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
                                 <AlternatingRowStyle BackColor="White" />
                                 <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

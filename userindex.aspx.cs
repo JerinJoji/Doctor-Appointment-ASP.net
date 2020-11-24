@@ -20,7 +20,7 @@ namespace ProjectDesignDemo
                 Panelrecord.Visible = false;
                 CalendarDoa.Visible = false;
 
-                /*SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
+                SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
 
                 SqlCommand cmd = new SqlCommand("SELECT * from Patients where Email = @email and Password = @password", conn);
                 conn.Open();
@@ -48,7 +48,14 @@ namespace ProjectDesignDemo
                 LDispDob.Text = Session["DOB"].ToString();
                 LDispPhone.Text = Session["phone"].ToString();
                 Lloggeduser.Text = Session["Pname"].ToString();
-                conn.Close();*/
+
+                conn.Close();
+                
+                SqlDataAdapter adp = new SqlDataAdapter("Select RecordId, DoctorName, DepartmentName, AppointmentDate, Status from Appointment where OpdId="+Session["opdno"], conn);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                UserrecordGridView.DataSource = dt;
+                UserrecordGridView.DataBind();
             }
         }
 
@@ -131,7 +138,106 @@ namespace ProjectDesignDemo
 
         protected void Btnpayonline_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
 
+            String insertAppoint = "INSERT INTO Appointment(OpdId,DoctorName,DepartmentName,AppointmentDate,Status)" +
+                "values (@Opdno,@doctorname,@departname,@Appointdate,@Status)";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = insertAppoint;
+
+            SqlParameter Opdno= new SqlParameter("@Opdno", SqlDbType.Int);
+            Opdno.Value = Session["opdno"].ToString();
+            cmd.Parameters.Add(Opdno);
+
+            SqlParameter doctorname = new SqlParameter("@doctorname", SqlDbType.VarChar, 50);
+            doctorname.Value = lbldoc.Text.ToString();
+            cmd.Parameters.Add(doctorname);
+
+            SqlParameter departname = new SqlParameter("@departname", SqlDbType.VarChar, 50);
+            departname.Value = lbldepart.Text.ToString();
+            cmd.Parameters.Add(departname);
+
+            SqlParameter appointdate = new SqlParameter("@Appointdate", SqlDbType.Date);
+            appointdate.Value = lbladate.Text.ToString();
+            cmd.Parameters.Add(appointdate);
+
+            SqlParameter status = new SqlParameter("@Status", SqlDbType.VarChar, 50);
+            status.Value = "Appointed";
+            cmd.Parameters.Add(status);
+
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                lblSuccess.Text = "Appointment Confirmed. Check Your Records/Email For Confirmation";
+                lblSuccess.ForeColor = System.Drawing.Color.Green;
+                Btnpayonline.Enabled = false;
+                Btnpaycounter.Enabled = false;
+            }
+            catch (SqlException ex)
+            {
+                string errorMessage = "Error in Registering Appointment";
+                errorMessage += ex.Message;
+                throw new Exception(errorMessage);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        protected void Btnpaycounter_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
+
+            String insertAppoint = "INSERT INTO Appointment(OpdId,DoctorName,DepartmentName,AppointmentDate,Status)" +
+                "values (@Opdno,@doctorname,@departname,@Appointdate,@Status)";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = insertAppoint;
+
+            SqlParameter Opdno = new SqlParameter("@Opdno", SqlDbType.Int);
+            Opdno.Value = Session["opdno"].ToString();
+            cmd.Parameters.Add(Opdno);
+
+            SqlParameter doctorname = new SqlParameter("@doctorname", SqlDbType.VarChar, 50);
+            doctorname.Value = lbldoc.Text.ToString();
+            cmd.Parameters.Add(doctorname);
+
+            SqlParameter departname = new SqlParameter("@departname", SqlDbType.VarChar, 50);
+            departname.Value = lbldepart.Text.ToString();
+            cmd.Parameters.Add(departname);
+
+            SqlParameter appointdate = new SqlParameter("@Appointdate", SqlDbType.Date);
+            appointdate.Value = lbladate.Text.ToString();
+            cmd.Parameters.Add(appointdate);
+
+            SqlParameter status = new SqlParameter("@Status", SqlDbType.VarChar, 50);
+            status.Value = "Not Confirmed";
+            cmd.Parameters.Add(status);
+
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                lblSuccess.Text = "Appointment Recorded, Not Confirmed.";
+                lblSuccess.ForeColor = System.Drawing.Color.Green;
+                Btnpayonline.Enabled = false;
+                Btnpaycounter.Enabled = false;
+            }
+            catch (SqlException ex)
+            {
+                string errorMessage = "Error in Registering Appointment";
+                errorMessage += ex.Message;
+                throw new Exception(errorMessage);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }
