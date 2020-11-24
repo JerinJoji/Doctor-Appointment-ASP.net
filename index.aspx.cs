@@ -28,5 +28,10 @@ namespace ProjectDesignDemo
         {
             Response.Redirect("loginsignup.aspx");
         }
+
+        protected void LLindexHeading_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
     }
 }

@@ -177,7 +177,6 @@ namespace ProjectDesignDemo
                 lblSuccess.ForeColor = System.Drawing.Color.Green;
                 Btnpayonline.Enabled = false;
                 Btnpaycounter.Enabled = false;
-                Response.Redirect("userindex.aspx");
             }
             catch (SqlException ex)
             {
@@ -230,7 +229,6 @@ namespace ProjectDesignDemo
                 lblSuccess.ForeColor = System.Drawing.Color.Green;
                 Btnpayonline.Enabled = false;
                 Btnpaycounter.Enabled = false;
-                Response.Redirect("userindex.aspx");
             }
             catch (SqlException ex)
             {
@@ -286,6 +284,11 @@ namespace ProjectDesignDemo
             ddlSearchdate.Visible = true;
             ddlSearchDept.Visible = true;
             ddlSearchDoctor.Visible = true;
+        }
+
+        protected void LLHeading_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("userindex.aspx");
         }
     }
 }
