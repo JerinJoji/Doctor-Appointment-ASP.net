@@ -81,10 +81,6 @@
                 height: 125px;
             }
         
-            .auto-style10 {
-                height: 345px;
-            }
-        
             .auto-style11 {
                 border-radius: 6px;
                 margin-top: 6px;
@@ -120,22 +116,15 @@
             .auto-style19 {
                 height: 36px;
             }
-            .auto-style20 {
-                height: 149px;
-            }
-            .auto-style21 {
-                width: 70%;
-                height: 32px;
-                border-radius: 6px;
-                margin-top: 6px;
-                margin-bottom: 25px;
-                padding: 0px 10px;
-                font-size: 22px;
-                font-variant: all-small-caps;
-            }
-
+                        
             .gridview{
                 overflow: hidden;
+            }
+            .auto-style21 {
+                height: 4px;
+            }
+            .auto-style22 {
+                height: 35px;
             }
         </style>
     </head>
@@ -213,52 +202,41 @@
                                     <div style="margin: 3% 14%;">
                                         <table style="width: 100%;">
                                         <tr>
-                                            <td class="auto-style7">
+                                            <td class="auto-style22">
                                                 <center>
                                                     <asp:Label ID="Label5" runat="server" Text="CHOOSE DEPARTMENT" CssClass="form-label"></asp:Label>
                                                 </center>
                                             </td>
 
-                                            <td class="auto-style7">
-                                                <asp:DropDownList ID="ddlDept" runat="server" CssClass ="form-input" Width="347px" DataSourceID="SqlDataSource1" DataTextField="DeptName" DataValueField="DeptName" AutoPostBack="True" OnSelectedIndexChanged="ddlDept_SelectedIndexChanged">
+                                            <td class="auto-style22">
+                                                <asp:DropDownList ID="ddlDept" runat="server" CssClass ="form-input" Width="347px" DataSourceID="DDLDeptDataSource" DataTextField="DeptName" DataValueField="DeptName" AutoPostBack="True" OnSelectedIndexChanged="ddlDept_SelectedIndexChanged">
                                                 </asp:DropDownList>
-                                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [DeptName] FROM [Department]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="DDLDeptDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [DeptName] FROM [Department]"></asp:SqlDataSource>
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <td class="auto-style20">
+                                            <td>
                                                 <center>
                                                     <asp:Label ID="Label6" runat="server" Text="CHOOSE DOCTOR" CssClass="form-label"></asp:Label>
                                                 </center>
                                             </td>
 
-                                            <td class="auto-style20">
+                                            <td>
                                                 <asp:DropDownList ID="ddlDoctor" runat="server" CssClass ="form-input" Width="347px">
                                                 </asp:DropDownList>
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <td class="auto-style10">
+                                            <td class="auto-style21">
                                                 <center>
                                                     <asp:Label ID="Label7" runat="server" Text="CHOOSE DOCTOR" CssClass="form-label"></asp:Label>
                                                 </center>
                                             </td>
                                             
-                                            <td class="auto-style10">
-                                                <asp:TextBox ID="TBAppointDate" runat="server" CssClass="auto-style11" Width="227px"></asp:TextBox>
-                                                <asp:ImageButton ID="CalenderImageButton" runat="server" ImageUrl="~/img/iconcalendar.png" Height="30px" Width="31px" OnClick="ImageButton1_Click" />
-                                                <asp:Calendar ID="CalendarDoa" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="212px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="346px" OnDayRender="CalendarDoa_DayRender" OnSelectionChanged="CalendarDoa_SelectionChanged">
-                                                    <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
-                                                    <DayStyle Width="14%" />
-                                                    <NextPrevStyle Font-Size="8pt" ForeColor="White" />
-                                                    <OtherMonthDayStyle ForeColor="#999999" />
-                                                    <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
-                                                    <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
-                                                    <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
-                                                    <TodayDayStyle BackColor="#CCCC99" />
-                                                </asp:Calendar>
+                                            <td class="auto-style21">
+                                                <asp:TextBox ID="TBAppointDate" runat="server" CssClass="auto-style11" Width="227px" TextMode="Date"></asp:TextBox>
                                             </td>
                                         </tr>
 
@@ -272,8 +250,8 @@
                                             <td colspan="2">
                                                 <center> 
                                                     <asp:Button ID="btnAppointment" runat="server" Text="BOOK APPOINTMENT" CssClass="booknow" OnClick="btnAppointment_Click" />
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    </center>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblError" runat="server" Font-Size="Small" ForeColor="Red"></asp:Label>
+&nbsp;                                          </center>
                                             </td>
                                         </tr>
                                         </table>
@@ -384,35 +362,180 @@
                                 <tr>
                                     <td style="width:33.33%">
                                         <center>
-                                            <input id="TBSearchbydate" type="search" placeholder="Search By Date" class="auto-style21"/>
+                                            <asp:Label ID="Label3" runat="server" Text="SEARCH BY DATE" CssClass="form-label"></asp:Label>
+                                            <br />
+                                            <asp:DropDownList runat="server" CssClass ="form-input" ID="ddlSearchdate" DataSourceID="SearchbydateDS" DataTextField="AppointmentDate" DataValueField="AppointmentDate" AutoPostBack="True" OnSelectedIndexChanged="ddlSearchdate_SelectedIndexChanged"></asp:DropDownList>
+                                            <asp:SqlDataSource ID="SearchbydateDS" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [AppointmentDate] FROM [Appointment]"></asp:SqlDataSource>
                                         </center>
                                     </td>
                                     <td style="width:33.33%">
                                         <center>
-                                            <input id="TBSearchbydoc" type="search" placeholder="Search By Doctor" class="auto-style21"/>
+                                            <asp:Label ID="Label4" runat="server" Text="SEARCH BY DOCTOR" CssClass="form-label"></asp:Label>
+                                            <br />
+                                            <asp:DropDownList runat="server" CssClass ="form-input" ID="ddlSearchDoctor" DataSourceID="SearchbyDocDS" DataTextField="DoctorName" DataValueField="DoctorName" AutoPostBack="True" OnSelectedIndexChanged="ddlSearchDoctor_SelectedIndexChanged"></asp:DropDownList>
+                                            <asp:SqlDataSource ID="SearchbyDocDS" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [DoctorName] FROM [Appointment]"></asp:SqlDataSource>
                                         </center>
                                     </td>
                                     <td style="width:33.33%">
                                         <center>
-                                            <input id="TBSearchbydep" type="search" placeholder="Search By Department" class="auto-style21"/>
+                                            <asp:Label ID="Label11" runat="server" Text="SEARCH BY DEPARTMENT" CssClass="form-label"></asp:Label>
+                                            <br />
+                                            <asp:DropDownList runat="server" CssClass ="form-input" ID="ddlSearchDept" DataSourceID="SearchbyDeptDS" DataTextField="DepartmentName" DataValueField="DepartmentName" AutoPostBack="True" OnSelectedIndexChanged="ddlSearchDept_SelectedIndexChanged"></asp:DropDownList>
+                                            <asp:SqlDataSource ID="SearchbyDeptDS" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [DepartmentName] FROM [Appointment]"></asp:SqlDataSource>
                                         </center>
                                     </td>
                                 </tr>
                             </table>
+                            <br />
+                            <center>
+                                <asp:Button ID="BtnRefresh" runat="server" Text="Refresh" CssClass ="booknow" OnClick="BtnRefresh_Click"/>
+                            </center>
                         </div>
                         <div style="padding:14px 14px">
-                            <asp:GridView ID="UserrecordGridView" runat="server" CssClass="gridview" ForeColor="#333333" GridLines="None" Font-Size="Medium" Width="100%" AllowSorting="True" >
-                                <AlternatingRowStyle BackColor="White" Width="100px"/>
-                                <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" Width="100px"/>
-                                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" Width="20%"/>
-                                <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" Width="100px"/>
-                                <RowStyle BackColor="#FFFBD6" ForeColor="#333333" Width="100px"/>
-                                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" Width="100px"/>
-                                <SortedAscendingCellStyle BackColor="#FDF5AC" Width="100px"/>
-                                <SortedAscendingHeaderStyle BackColor="#4D0000" Width="100px"/>
-                                <SortedDescendingCellStyle BackColor="#FCF6C0" Width="100px"/>
-                                <SortedDescendingHeaderStyle BackColor="#820000" Width="100px"/>
+                            <asp:Panel ID="GridAllViewPanel" runat="server">
+                                <asp:GridView ID="UserrecordGridView" runat="server" CssClass="modal-open" Font-Size="Medium" Width="100%" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="GridviewallDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" >
+                                <AlternatingRowStyle Width="100px"/>
+                                <Columns>
+                                    <asp:BoundField DataField="RecordId" HeaderText="Record Id" SortExpression="RecordId" InsertVisible="False" ReadOnly="True" >
+                                    <ItemStyle Width="20%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="DoctorName" HeaderText="Doctor" SortExpression="DoctorName" >
+                                    <ItemStyle Width="20%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="DepartmentName" HeaderText="Department" SortExpression="DepartmentName" >
+                                    <ItemStyle Width="20%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="AppointmentDate" HeaderText="Appointment Date" SortExpression="AppointmentDate" >
+                                    <ItemStyle Width="20%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" >
+                                    </asp:BoundField>
+                                </Columns>
+                                <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" Width="100px"/>
+                                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" Width="20%"/>
+                                <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" Width="100px"/>
+                                <RowStyle BackColor="White" ForeColor="#330099" Width="100px"/>
+                                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" Width="100px"/>
+                                <SortedAscendingCellStyle BackColor="#FEFCEB" Width="100px"/>
+                                <SortedAscendingHeaderStyle BackColor="#AF0101" Width="100px"/>
+                                <SortedDescendingCellStyle BackColor="#F6F0C0" Width="100px"/>
+                                <SortedDescendingHeaderStyle BackColor="#7E0000" Width="100px"/>
                             </asp:GridView>
+                            <asp:SqlDataSource ID="GridviewallDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [RecordId], [DoctorName], [DepartmentName], [AppointmentDate], [Status] FROM [Appointment] WHERE ([OpdId] = @OpdId)">
+                                <SelectParameters>
+                                    <asp:SessionParameter Name="OpdId" SessionField="opdno" Type="Int32" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                            <br />
+                            </asp:Panel>
+                            
+                            <asp:Panel ID="GridDateViewPanel" runat="server">
+                                <br />
+                            <asp:GridView ID="SearchDateGridView" runat="server" Width="100%" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="GridDateSearch" Font-Size="Medium">
+                                <Columns>
+                                    <asp:BoundField DataField="RecordId" HeaderText="Record Id" InsertVisible="False" ReadOnly="True" SortExpression="RecordId">
+                                    <ItemStyle Width="20%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="DoctorName" HeaderText="Doctor" SortExpression="DoctorName">
+                                    <ItemStyle Width="20%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="DepartmentName" HeaderText="Department" SortExpression="DepartmentName">
+                                    <ItemStyle Width="20%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="AppointmentDate" HeaderText="Appointment Date" SortExpression="AppointmentDate">
+                                    <ItemStyle Width="20%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status">
+                                    </asp:BoundField>
+                                </Columns>
+                                <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                <RowStyle BackColor="White" ForeColor="#330099" />
+                                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                                <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                                <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                                <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                            </asp:GridView>
+                            <asp:SqlDataSource ID="GridDateSearch" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [RecordId], [DoctorName], [DepartmentName], [AppointmentDate], [Status] FROM [Appointment] WHERE ([AppointmentDate] = @AppointmentDate)">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="ddlSearchdate" DbType="Date" Name="AppointmentDate" PropertyName="SelectedValue" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                            <br />
+                            </asp:Panel>
+
+                            <asp:Panel ID="GridDocSearch" runat="server">
+                                <asp:GridView ID="GridView1" runat="server" Width="100%" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="GridDocSearchDS" Font-Size="Medium">
+                                <Columns>
+                                    <asp:BoundField DataField="RecordId" HeaderText="Record Id" InsertVisible="False" ReadOnly="True" SortExpression="RecordId">
+                                    <ItemStyle Width="20%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="DoctorName" HeaderText="Doctor" SortExpression="DoctorName">
+                                    <ItemStyle Width="20%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="DepartmentName" HeaderText="Department" SortExpression="DepartmentName">
+                                    <ItemStyle Width="20%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="AppointmentDate" HeaderText="Appointment Date" SortExpression="AppointmentDate">
+                                    <ItemStyle Width="20%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status">
+                                    </asp:BoundField>
+                                </Columns>
+                                <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                <RowStyle BackColor="White" ForeColor="#330099" />
+                                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                                <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                                <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                                <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                            </asp:GridView>
+                                <asp:SqlDataSource ID="GridDocSearchDS" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [RecordId], [DoctorName], [DepartmentName], [AppointmentDate], [Status] FROM [Appointment] WHERE ([DoctorName] = @DoctorName)">
+                                    <SelectParameters>
+                                        <asp:ControlParameter ControlID="ddlSearchDoctor" Name="DoctorName" PropertyName="SelectedValue" Type="String" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
+                                <br />
+                            </asp:Panel>
+
+                            <asp:Panel ID="GridDeptSearchPanel" runat="server" Font-Size="Medium">
+                                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="GridDeptSearchDS" Font-Size="Medium" Width="1157px">
+                                    <Columns>
+                                        <asp:BoundField DataField="RecordId" HeaderText="Record Id" InsertVisible="False" ReadOnly="True" SortExpression="RecordId">
+                                        <ItemStyle Width="20%" />
+                                        </asp:BoundField>
+                                        <asp:BoundField DataField="DoctorName" HeaderText="Doctor" SortExpression="DoctorName">
+                                        <ItemStyle Width="20%" />
+                                        </asp:BoundField>
+                                        <asp:BoundField DataField="DepartmentName" HeaderText="Department" SortExpression="DepartmentName">
+                                        <ItemStyle Width="20%" />
+                                        </asp:BoundField>
+                                        <asp:BoundField DataField="AppointmentDate" HeaderText="Appointment Date" SortExpression="AppointmentDate">
+                                        <ItemStyle Width="20%" />
+                                        </asp:BoundField>
+                                        <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status">
+                                        </asp:BoundField>
+                                    </Columns>
+                                    <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                    <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                    <RowStyle BackColor="White" ForeColor="#330099" />
+                                    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                    <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                                    <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                                    <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                                    <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                                </asp:GridView>
+                                <asp:SqlDataSource ID="GridDeptSearchDS" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [RecordId], [DoctorName], [DepartmentName], [AppointmentDate], [Status] FROM [Appointment] WHERE ([DepartmentName] = @DepartmentName)">
+                                    <SelectParameters>
+                                        <asp:ControlParameter ControlID="ddlSearchDept" Name="DepartmentName" PropertyName="SelectedValue" Type="String" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
+                            </asp:Panel>
                         </div>
                     </div>
                 </asp:Panel>

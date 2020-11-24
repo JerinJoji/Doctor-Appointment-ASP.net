@@ -18,7 +18,14 @@ namespace ProjectDesignDemo
                 MultiView1.ActiveViewIndex = 0;
                 Panelbookappoint.Visible = true;
                 Panelrecord.Visible = false;
-                CalendarDoa.Visible = false;
+                //CalendarDoa.Visible = false;
+                GridAllViewPanel.Visible = true;
+                GridDateViewPanel.Visible = false;
+                GridDocSearch.Visible = false;
+                GridDeptSearchPanel.Visible = false;
+                ddlSearchdate.Visible = true;
+                ddlSearchDept.Visible = true;
+                ddlSearchDoctor.Visible = true;
 
                 SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
 
@@ -50,12 +57,6 @@ namespace ProjectDesignDemo
                 Lloggeduser.Text = Session["Pname"].ToString();
 
                 conn.Close();
-                
-                SqlDataAdapter adp = new SqlDataAdapter("Select RecordId, DoctorName, DepartmentName, AppointmentDate, Status from Appointment where OpdId="+Session["opdno"], conn);
-                DataTable dt = new DataTable();
-                adp.Fill(dt);
-                UserrecordGridView.DataSource = dt;
-                UserrecordGridView.DataBind();
             }
         }
 
@@ -76,7 +77,7 @@ namespace ProjectDesignDemo
             Response.Redirect("index.aspx");
         }
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        /*protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
             if (CalendarDoa.Visible)
             {
@@ -86,16 +87,16 @@ namespace ProjectDesignDemo
             {
                 CalendarDoa.Visible = true;
             }
-        }
+        }*/
 
-        protected void CalendarDoa_DayRender(object sender, DayRenderEventArgs e)
+        /*protected void CalendarDoa_DayRender(object sender, DayRenderEventArgs e)
         {
             if(e.Day.Date < DateTime.Now.Date)
             {
                 e.Day.IsSelectable = false;
                 e.Cell.ForeColor = System.Drawing.Color.LightGray;
             }
-        }
+        }*/
 
         protected void btnAppointment_Click(object sender, EventArgs e)
         {
@@ -103,6 +104,7 @@ namespace ProjectDesignDemo
             lbldepart.Text = ddlDept.SelectedItem.Value;
             lbldoc.Text = ddlDoctor.SelectedItem.Value;
             lbladate.Text = TBAppointDate.Text;
+            
         }
 
         protected void gotopaymentview_Click(object sender, EventArgs e)
@@ -130,11 +132,11 @@ namespace ProjectDesignDemo
 
         }
 
-        protected void CalendarDoa_SelectionChanged(object sender, EventArgs e)
+        /*protected void CalendarDoa_SelectionChanged(object sender, EventArgs e)
         {
             TBAppointDate.Text = CalendarDoa.SelectedDate.ToShortDateString();
             CalendarDoa.Visible = false;
-        }
+        }*/
 
         protected void Btnpayonline_Click(object sender, EventArgs e)
         {
@@ -240,6 +242,50 @@ namespace ProjectDesignDemo
             {
                 con.Close();
             }
+        }
+
+        protected void ddlSearchdate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridAllViewPanel.Visible = false;
+            GridDateViewPanel.Visible = true;
+            GridDeptSearchPanel.Visible = false;
+            GridDocSearch.Visible = false;
+            ddlSearchDept.Visible = false;
+            ddlSearchDoctor.Visible = false;
+            ddlSearchdate.Visible = true;
+        }
+
+        protected void ddlSearchDoctor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridAllViewPanel.Visible = false;
+            GridDateViewPanel.Visible = false;
+            GridDeptSearchPanel.Visible = false;
+            GridDocSearch.Visible = true;
+            ddlSearchdate.Visible = false;
+            ddlSearchDept.Visible = false;
+            ddlSearchDoctor.Visible = true;
+        }
+
+        protected void ddlSearchDept_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridAllViewPanel.Visible = false;
+            GridDateViewPanel.Visible = false;
+            GridDeptSearchPanel.Visible = true;
+            GridDocSearch.Visible = false;
+            ddlSearchDoctor.Visible = false;
+            ddlSearchdate.Visible = false;
+            ddlSearchDept.Visible = true;
+        }
+
+        protected void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            GridAllViewPanel.Visible = true;
+            GridDateViewPanel.Visible = false;
+            GridDocSearch.Visible = false;
+            GridDeptSearchPanel.Visible = false;
+            ddlSearchdate.Visible = true;
+            ddlSearchDept.Visible = true;
+            ddlSearchDoctor.Visible = true;
         }
     }
 }
