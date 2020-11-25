@@ -175,6 +175,8 @@
                         <br />
                         <asp:TextBox ID="TBAadhar" runat="server" CssClass="form-input" TextMode="Number"></asp:TextBox>
                         <br />
+                        <asp:Label ID="lblerroremail" runat="server" Font-Size="Small" ForeColor="Red"></asp:Label>
+                        <br />
                         <br />
                         
                         <asp:Button ID="BReset" runat="server" Height="40px" Text="RESET" Width="104px" CssClass="booknow" />
