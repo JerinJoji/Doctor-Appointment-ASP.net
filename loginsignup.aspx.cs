@@ -193,5 +193,10 @@ namespace ProjectDesignDemo
         {
             Response.Redirect("index.aspx");
         }
+
+        protected void BCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
     }
 }
