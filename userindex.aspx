@@ -51,11 +51,11 @@
                 float: right;
             }
         
-            .auto-style5 {
-                float: right;
-                margin-left: 40px;
-                margin-top: 13px;
-                margin-right: 80px;
+            .auto-style1 {
+                width: 100%;
+                height: 51px;
+                background-color: #c23838;
+                border-color: #c23838;
             }
         
             .tabs{
@@ -342,7 +342,7 @@
                                         <br />
                                         <asp:Button ID="Btnpayonline" runat="server" Text="PAY ONLINE" CssClass="booknow" OnClick="Btnpayonline_Click"/>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Button ID="Btnpaycounter" runat="server" Text="PAY AT COUNTER" CssClass="booknow"/>
+                                        <asp:Button ID="Btnpaycounter" runat="server" Text="PAY AT COUNTER" CssClass="booknow" OnClick="Btnpaycounter_Click"/>
                                     </div>
                                 </asp:View>
                             </asp:MultiView>

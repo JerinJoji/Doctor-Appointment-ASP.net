@@ -29,7 +29,7 @@
 .auto-style5 {
     float: right;
     margin-left: 40px;
-    margin-top: 0px;
+    margin-top: 13px;
     margin-right: 80px;
 }
 
@@ -78,4 +78,11 @@ p{
     margin-top: 6px;
     margin-bottom: 25px;
     padding: 0px 10px;
+}
+
+.navi-btn {
+    float: right;
+    margin-left: 40px;
+    margin-top: 13px;
+    margin-right: 80px;
 }

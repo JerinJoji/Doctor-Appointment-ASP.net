@@ -6,6 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
+using System.Text;
+using System.Net;
+using System.Net.Mail;
 
 namespace ProjectDesignDemo
 {
@@ -173,8 +177,8 @@ namespace ProjectDesignDemo
             {
                 con.Open();
                 cmd.ExecuteNonQuery();
-                lblSuccess.Text = "Appointment Confirmed. Check Your Records/Email For Confirmation";
-                lblSuccess.ForeColor = System.Drawing.Color.Green;
+                cmd.Dispose();
+                SendConfirmMail();
                 Btnpayonline.Enabled = false;
                 Btnpaycounter.Enabled = false;
             }
@@ -225,8 +229,8 @@ namespace ProjectDesignDemo
             {
                 con.Open();
                 cmd.ExecuteNonQuery();
-                lblSuccess.Text = "Appointment Recorded, Not Confirmed.";
-                lblSuccess.ForeColor = System.Drawing.Color.Green;
+                cmd.Dispose();
+                SendPayCounterMail();
                 Btnpayonline.Enabled = false;
                 Btnpaycounter.Enabled = false;
             }
@@ -289,6 +293,76 @@ namespace ProjectDesignDemo
         protected void LLHeading_Click(object sender, EventArgs e)
         {
             Response.Redirect("userindex.aspx");
+        }
+
+        private void SendConfirmMail()
+        {
+            string filename = Server.MapPath("ConfirmAppoint.html");
+            string mailbody = System.IO.File.ReadAllText(filename);
+            mailbody = mailbody.Replace("##Opdno##", Session["opdno"].ToString());
+            mailbody = mailbody.Replace("##Name##", Session["Pname"].ToString());
+            mailbody = mailbody.Replace("##Phone##", Session["phone"].ToString());
+            mailbody = mailbody.Replace("##DeptName##", lbldepart.Text);
+            mailbody = mailbody.Replace("##DoctorName##", lbldoc.Text);
+            mailbody = mailbody.Replace("##AppointDate##", lbladate.Text);
+
+            string to = Session["email"].ToString();
+            string from = "jerinkjoji@gmail.com";
+            MailMessage message = new MailMessage(from, to);
+            message.Subject = "Auto Response Email";
+            message.Body = mailbody;
+            message.BodyEncoding = Encoding.UTF8;
+            message.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+            System.Net.NetworkCredential basicCredential = new System.Net.NetworkCredential("jerinkjoji@gmail.com", "its#commercialGmail");
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = true;
+            client.Credentials = basicCredential;
+            try
+            {
+                client.Send(message);
+                lblSuccess.Text = "Appointment Confirmed. Check Your Records/Email For Confirmation";
+                lblSuccess.ForeColor = System.Drawing.Color.Green;
+            }
+            catch (Exception ex)
+            {
+                lblSuccess.Text = ex.Message;
+            }
+        }
+
+        private void SendPayCounterMail()
+        {
+            string filename = Server.MapPath("PayCounterMail.html");
+            string mailbody = System.IO.File.ReadAllText(filename);
+            mailbody = mailbody.Replace("##Opdno##", Session["opdno"].ToString());
+            mailbody = mailbody.Replace("##Name##", Session["Pname"].ToString());
+            mailbody = mailbody.Replace("##Phone##", Session["phone"].ToString());
+            mailbody = mailbody.Replace("##DeptName##", lbldepart.Text);
+            mailbody = mailbody.Replace("##DoctorName##", lbldoc.Text);
+            mailbody = mailbody.Replace("##AppointDate##", lbladate.Text);
+
+            string to = Session["email"].ToString();
+            string from = "jerinkjoji@gmail.com";
+            MailMessage message = new MailMessage(from, to);
+            message.Subject = "Auto Response Email";
+            message.Body = mailbody;
+            message.BodyEncoding = Encoding.UTF8;
+            message.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+            System.Net.NetworkCredential basicCredential = new System.Net.NetworkCredential("jerinkjoji@gmail.com", "its#commercialGmail");
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = true;
+            client.Credentials = basicCredential;
+            try
+            {
+                client.Send(message);
+                lblSuccess.Text = "Appointment Recorded, Not Confirmed. Check Mail for Confirmation.";
+                lblSuccess.ForeColor = System.Drawing.Color.Green;
+            }
+            catch (Exception ex)
+            {
+                lblSuccess.Text = ex.Message;
+            }
         }
     }
 }

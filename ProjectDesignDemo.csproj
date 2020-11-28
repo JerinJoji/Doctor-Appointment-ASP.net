@@ -67,18 +67,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminindex.aspx" />
     <Content Include="App_Data\ProjectData.mdf" />
     <Content Include="App_Data\ProjectData_log.ldf">
       <DependentUpon>ProjectData.mdf</DependentUpon>
     </Content>
+    <Content Include="ConfirmAppoint.html" />
     <Content Include="css\style.css" />
     <Content Include="img\iconcalendar.png" />
     <Content Include="index.aspx" />
     <Content Include="loginsignup.aspx" />
+    <Content Include="PayCounterMail.html" />
     <Content Include="userindex.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminindex.aspx.cs">
+      <DependentUpon>adminindex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminindex.aspx.designer.cs">
+      <DependentUpon>adminindex.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
