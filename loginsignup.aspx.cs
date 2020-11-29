@@ -7,18 +7,22 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net;
+using System.Net.Mail;
 
 namespace ProjectDesignDemo
 {
     public partial class loginsignup : System.Web.UI.Page
     {
-        
+        static String activationcode;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 PanelLogin.Visible = true;
                 PanelRegister.Visible = false;
+                ActivationPanel.Visible = false;
                 LoginButton.BackColor = System.Drawing.Color.White;
                 LoginButton.ForeColor = System.Drawing.Color.Black;
                 RegisterButton.BackColor = Color.FromName("#c23838");
@@ -30,6 +34,7 @@ namespace ProjectDesignDemo
         {
             PanelLogin.Visible = true;
             PanelRegister.Visible = false;
+            ActivationPanel.Visible = false;
             LoginButton.BackColor = System.Drawing.Color.White;
             LoginButton.ForeColor = System.Drawing.Color.Black;
             RegisterButton.BackColor = Color.FromName("#c23838");
@@ -40,6 +45,7 @@ namespace ProjectDesignDemo
         {
             PanelLogin.Visible = false;
             PanelRegister.Visible = true;
+            ActivationPanel.Visible = false;
             RegisterButton.BackColor = System.Drawing.Color.White;
             RegisterButton.ForeColor = System.Drawing.Color.Black;
             LoginButton.BackColor = Color.FromName("#c23838");
@@ -100,6 +106,59 @@ namespace ProjectDesignDemo
             }
             else
             {
+                Random random = new Random();
+                activationcode = random.Next(100000, 999999).ToString();
+                sendcode();
+                PanelLogin.Visible = false;
+                PanelRegister.Visible = false;
+                ActivationPanel.Visible = true;
+                RegisterButton.BackColor = System.Drawing.Color.White;
+                RegisterButton.ForeColor = System.Drawing.Color.Black;
+                LoginButton.BackColor = Color.FromName("#c23838");
+                LoginButton.ForeColor = Color.FromName("#fff");
+            }
+        }
+
+        protected void BLCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        protected void BCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        private void sendcode()
+        {
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.Credentials = new System.Net.NetworkCredential("jerinkjoji@gmail.com","its#commercialGmail");
+            smtp.EnableSsl = true;
+            MailMessage msg = new MailMessage();
+            msg.Subject = "Doctor's Appointment Activation Code";
+            msg.Body = "Dear User, Your Activation code is " + activationcode + "\n\n\nEnter the above activation code for Creating an account. \n\nThank you for Choosing Our Hospital.";
+            string toaddress = TBEmail.Text;
+            msg.To.Add(toaddress);
+            string fromaddress = "jerinkjoji@gmail.com";
+            msg.From = new MailAddress(fromaddress);
+            try
+            {
+                smtp.Send(msg);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        protected void BtnVerify_Click(object sender, EventArgs e)
+        {
+            if(activationcode == TBCode.Text)
+            {
+                SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
+
                 String insertSql = "INSERT INTO Patients(PatientName,FathersName,DateofBirth,Address,Village,PostOffice,PoliceStation,District,State,pincode,AadharNo,Phone,Email,Gender, Password)" +
                 "values (@PatientName,@FathersName,@DateofBirth,@Address,@Village,@PostOffice,@PoliceStation,@District,@State,@pincode,@AadharNo,@Phone,@Email,@Gender,@Password)";
                 SqlCommand cmd = new SqlCommand();
@@ -187,16 +246,21 @@ namespace ProjectDesignDemo
                     con.Close();
                 }
             }
+            else
+            {
+                lblcodecheck.Text = "Invalid Code";
+            }
         }
 
-        protected void BLCancel_Click(object sender, EventArgs e)
+        protected void BtnCodeBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("index.aspx");
-        }
-
-        protected void BCancel_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("index.aspx");
+            PanelLogin.Visible = false;
+            PanelRegister.Visible = true;
+            ActivationPanel.Visible = false;
+            RegisterButton.BackColor = System.Drawing.Color.White;
+            RegisterButton.ForeColor = System.Drawing.Color.Black;
+            LoginButton.BackColor = Color.FromName("#c23838");
+            LoginButton.ForeColor = Color.FromName("#fff");
         }
     }
 }

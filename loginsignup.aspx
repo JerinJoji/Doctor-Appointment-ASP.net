@@ -175,7 +175,7 @@
                         <br />
                         <asp:TextBox ID="TBAadhar" runat="server" CssClass="form-input" TextMode="Number"></asp:TextBox>
                         <br />
-                        <asp:Label ID="lblerroremail" runat="server" Font-Size="Small" ForeColor="Red"></asp:Label>
+                        <asp:Label ID="lblerroremail" runat="server" Font-Size="Medium" ForeColor="Red"></asp:Label>
                         <br />
                         <br />
                         
@@ -183,6 +183,28 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="BRegSubmit" runat="server" Height="40px" Text="SUBMIT" Width="104px" CssClass="booknow" OnClick="BSubmit_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="BCancel" runat="server" Height="40px" Text="CANCEL" Width="104px" CssClass="booknow" OnClick="BCancel_Click" />
+                    </div>
+                </asp:Panel>
+
+                <asp:Panel ID="ActivationPanel" runat="server">
+                    <div style="padding: 50px 50px 50px 50px">
+                        <p>An Activation Code is sent to given Mail ID.<br /></p>
+                        <p>
+                            This is to verify the Email ID<br /></p>
+                        <p>
+                            Enter Activation Code.</p>
+                        <asp:TextBox ID="TBCode" runat="server" CssClass="form-input" TextMode="Password"></asp:TextBox>
+
+                        <br />
+                        <asp:Label ID="lblcodecheck" runat="server" Font-Size="Medium" ForeColor="Red"></asp:Label>
+                        <br />
+
+                        <br />
+                        <asp:Button ID="BtnVerify" runat="server" Text="Verify" CssClass="booknow" OnClick="BtnVerify_Click"/>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="BtnCodeBack" runat="server" Text="Back" CssClass="booknow" OnClick="BtnCodeBack_Click"/>
+
                     </div>
                 </asp:Panel>
             </div>
