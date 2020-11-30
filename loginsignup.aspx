@@ -175,14 +175,16 @@
                         <br />
                         <asp:TextBox ID="TBAadhar" runat="server" CssClass="form-input" TextMode="Number"></asp:TextBox>
                         <br />
-                        <asp:Label ID="lblerroremail" runat="server" Font-Size="Medium" ForeColor="Red"></asp:Label>
-                        <br />
-                        <br />
                         
-                        <asp:Button ID="BReset" runat="server" Height="40px" Text="RESET" Width="104px" CssClass="booknow" />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="BRegSubmit" runat="server" Height="40px" Text="SUBMIT" Width="104px" CssClass="booknow" OnClick="BSubmit_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="BCancel" runat="server" Height="40px" Text="CANCEL" Width="104px" CssClass="booknow" OnClick="BCancel_Click" />
+                        <center>
+                            <asp:Label ID="lblerroremail" runat="server" Font-Size="Medium" ForeColor="Red"></asp:Label>
+                            <br />
+                            <br />
+                            <asp:Button ID="Button1" runat="server" Height="40px" Text="RESET" Width="104px" CssClass="booknow" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="Button2" runat="server" Height="40px" Text="SUBMIT" Width="104px" CssClass="booknow" OnClick="BSubmit_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="Button3" runat="server" Height="40px" Text="CANCEL" Width="104px" CssClass="booknow" OnClick="BCancel_Click" />
+                        </center>
                     </div>
                 </asp:Panel>
 

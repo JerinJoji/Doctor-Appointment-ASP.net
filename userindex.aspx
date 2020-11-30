@@ -237,8 +237,10 @@
                                         </tr>
 
                                         <tr>
-                                            <td>
-                                                &nbsp;
+                                            <td colspan="2">
+                                                <center>
+                                                    <asp:Label runat="server" ID="lblslotfull" Font-Size="Medium" ForeColor="Red"></asp:Label>
+                                                </center>
                                             </td>
                                         </tr>
 

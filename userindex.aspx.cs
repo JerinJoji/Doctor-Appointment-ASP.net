@@ -104,11 +104,27 @@ namespace ProjectDesignDemo
 
         protected void btnAppointment_Click(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 1;
-            lbldepart.Text = ddlDept.SelectedItem.Value;
-            lbldoc.Text = ddlDoctor.SelectedItem.Value;
-            lbladate.Text = TBAppointDate.Text;
-            
+            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
+            SqlCommand query = new SqlCommand("SELECT * FROM Appointment WHERE DoctorName = @docname and AppointmentDate = @appointdate", conn);
+            query.Parameters.AddWithValue("@docname", ddlDoctor.SelectedItem.Value);
+            query.Parameters.AddWithValue("@appointdate", TBAppointDate.Text);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter(query);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            int appointcount = dt.Rows.Count;
+
+            if(appointcount >= 3)
+            {
+                lblslotfull.Text = "The Slots are full for this Date. Please Choose Another Date";
+            }
+            else
+            {
+                MultiView1.ActiveViewIndex = 1;
+                lbldepart.Text = ddlDept.SelectedItem.Value;
+                lbldoc.Text = ddlDoctor.SelectedItem.Value;
+                lbladate.Text = TBAppointDate.Text;
+            }
         }
 
         protected void gotopaymentview_Click(object sender, EventArgs e)

@@ -78,6 +78,7 @@
     <Content Include="index.aspx" />
     <Content Include="loginsignup.aspx" />
     <Content Include="PayCounterMail.html" />
+    <Content Include="useredit.aspx" />
     <Content Include="userindex.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -102,6 +103,13 @@
     </Compile>
     <Compile Include="loginsignup.aspx.designer.cs">
       <DependentUpon>loginsignup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="useredit.aspx.cs">
+      <DependentUpon>useredit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="useredit.aspx.designer.cs">
+      <DependentUpon>useredit.aspx</DependentUpon>
     </Compile>
     <Compile Include="userindex.aspx.cs">
       <DependentUpon>userindex.aspx</DependentUpon>

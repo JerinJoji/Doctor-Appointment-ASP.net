@@ -15,9 +15,7 @@
         <link href="css/style.css" rel="stylesheet" />
 
     <style type="text/css">
-        div{
-            border:2px solid;
-        }
+        
         .auto-style6 {
             margin-left: 220px;
             margin-right: 246px;
@@ -44,7 +42,7 @@
                     </td>
                     
                     <td class="auto-style5">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span class="glyphicon glyphicon-user" style="left: 0px; top: -1px; height: 24px; color:white;">&nbsp;</span><asp:Label ID="Label2" runat="server" Text="Welcome" Font-Size="Large" ForeColor="White"></asp:Label>&nbsp;
                         <asp:Label ID="Lloggeduser" runat="server" Font-Size="Large" ForeColor="White" Text=""></asp:Label>
 
@@ -60,12 +58,34 @@
             </table>
 
         <div style="margin-bottom: 0px;" class="auto-style6">
-
-            <asp:Button ID="Button1" runat="server" Text="Today's Appointment" CssClass="tabs"/>
-
+            <asp:Button ID="BTodayAppoint" runat="server" Text="Today's Appointment" CssClass="tabs"/>
+            <br />
+            <br />
+            <asp:Panel ID="TodayAppointPanel" runat="server">
+                <asp:GridView ID="GridTodayAppoint" runat="server" Width="100%" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" OnRowCommand="GridTodayAppoint_RowCommand">
+                    <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:BoundField DataField="RecordId" HeaderText="Record ID" />
+                        <asp:BoundField DataField="OpdId" HeaderText="OPD No" />
+                        <asp:BoundField DataField="PatientName" HeaderText="Patient Name" />
+                        <asp:BoundField DataField="DepartmentName" HeaderText="Department" />
+                        <asp:BoundField DataField="DoctorName" HeaderText="Doctor" />
+                        <asp:BoundField DataField="Status" HeaderText="Status" />
+                        <asp:ButtonField ButtonType="Button" CommandName="checkedup" Text="Checked Up" />
+                    </Columns>
+                    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+                    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+                    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+                    <SortedDescendingHeaderStyle BackColor="#820000" />
+                </asp:GridView>
+            </asp:Panel>
         </div>
-
     </form>
 
-        </body>
+</body>
 </html>

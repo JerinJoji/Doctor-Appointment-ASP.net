@@ -69,12 +69,30 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.LinkButton Linklogout;
 
         /// <summary>
-        /// Button1 control.
+        /// BTodayAppoint control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button BTodayAppoint;
+
+        /// <summary>
+        /// TodayAppointPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel TodayAppointPanel;
+
+        /// <summary>
+        /// GridTodayAppoint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridTodayAppoint;
     }
 }
