@@ -14,7 +14,10 @@ namespace ProjectDesignDemo
 
         protected void Page_Load(object sender, EventArgs e)
 		{
+            TodayAppointPanel.Visible = true;
+            RecordsPanel.Visible = false;
             LoadPage();
+            LoadRecords();
         }
 
         protected void GridTodayAppoint_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -57,9 +60,113 @@ namespace ProjectDesignDemo
             conn.Close();
         }
 
+        private void LoadRecords()
+        {
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT RecordId,OpdId,PatientName,DepartmentName,DoctorName,AppointmentDate,Status FROM Appointment JOIN Patients ON Appointment.OpdId = Patients.OpdNo", conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            GridViewRecords.DataSource = dt;
+            GridViewRecords.DataBind();
+            conn.Close();
+        }
+
         protected void LLHeading_Click(object sender, EventArgs e)
         {
             Response.Redirect("adminindex.aspx");
+        }
+
+        protected void BSearch_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand query = new SqlCommand("SELECT RecordId,OpdId,PatientName,DepartmentName,DoctorName,Status FROM Appointment JOIN Patients ON Appointment.OpdId = Patients.OpdNo and DoctorName like '%'+@Docname+'%' and DepartmentName like '%'+@Deptname+'%' and OpdId like'%'+@opd+'%' and PatientName like '%'+@record+'%' and AppointmentDate = (SELECT CAST(GETDATE() AS Date))", conn);
+            query.Parameters.AddWithValue("Docname",TBSDoc.Text);
+            query.Parameters.AddWithValue("Deptname", TBSDept.Text);
+            query.Parameters.AddWithValue("opd", TBSOpd.Text);
+            query.Parameters.AddWithValue("record", TBSName.Text);
+            DataTable dt = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter(query);
+            sda.Fill(dt);
+            GridTodayAppoint.DataSource = dt;
+            GridTodayAppoint.DataBind();
+            BSRefresh.Visible = true;
+            BSearch.Visible = false;
+            TodayAppointPanel.Visible = true;
+            RecordsPanel.Visible = false;
+        }
+
+        protected void BSRefresh_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand query = new SqlCommand("SELECT RecordId,OpdId,PatientName,DepartmentName,DoctorName,Status FROM Appointment JOIN Patients ON Appointment.OpdId = Patients.OpdNo and DoctorName like '%'+@Docname+'%' and DepartmentName like '%'+@Deptname+'%' and OpdId like'%'+@opd+'%' and PatientName like '%'+@record+'%' and AppointmentDate = (SELECT CAST(GETDATE() AS Date))", conn);
+            query.Parameters.AddWithValue("Docname", "");
+            query.Parameters.AddWithValue("Deptname", "");
+            query.Parameters.AddWithValue("opd", "");
+            query.Parameters.AddWithValue("record","");
+            DataTable dt = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter(query);
+            sda.Fill(dt);
+            GridTodayAppoint.DataSource = dt;
+            GridTodayAppoint.DataBind();
+            BSearch.Visible = true;
+            BSRefresh.Visible = false;
+            TodayAppointPanel.Visible = true;
+            RecordsPanel.Visible = false;
+        }
+
+        protected void BRecSearch_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand query = new SqlCommand("SELECT RecordId,OpdId,PatientName,DepartmentName,DoctorName,AppointmentDate,Status FROM Appointment JOIN Patients ON Appointment.OpdId = Patients.OpdNo and DoctorName like '%'+@Docname+'%' and DepartmentName like '%'+@Deptname+'%' and OpdId like'%'+@opd+'%' and PatientName like '%'+@record+'%'", conn);
+            query.Parameters.AddWithValue("Docname", TBRecDoc.Text);
+            query.Parameters.AddWithValue("Deptname", TBRecDept.Text);
+            query.Parameters.AddWithValue("opd", TBRecOpd.Text);
+            query.Parameters.AddWithValue("record", TBRecName.Text);
+            DataTable dt = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter(query);
+            sda.Fill(dt);
+            GridViewRecords.DataSource = dt;
+            GridViewRecords.DataBind();
+            BRecRefresh.Visible = true;
+            BRecSearch.Visible = false;
+            TodayAppointPanel.Visible = false;
+            RecordsPanel.Visible = true;
+        }
+
+        protected void BRecRefresh_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand query = new SqlCommand("SELECT RecordId,OpdId,PatientName,DepartmentName,DoctorName,AppointmentDate,Status FROM Appointment JOIN Patients ON Appointment.OpdId = Patients.OpdNo and DoctorName like '%'+@Docname+'%' and DepartmentName like '%'+@Deptname+'%' and OpdId like'%'+@opd+'%' and PatientName like '%'+@record+'%'", conn);
+            query.Parameters.AddWithValue("Docname", "");
+            query.Parameters.AddWithValue("Deptname", "");
+            query.Parameters.AddWithValue("opd", "");
+            query.Parameters.AddWithValue("record", "");
+            DataTable dt = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter(query);
+            sda.Fill(dt);
+            GridViewRecords.DataSource = dt;
+            GridViewRecords.DataBind();
+            BRecSearch.Visible = true;
+            BRecRefresh.Visible = false;
+            TodayAppointPanel.Visible = false;
+            RecordsPanel.Visible = true;
+        }
+
+        protected void BTodayAppoint_Click(object sender, EventArgs e)
+        {
+            TodayAppointPanel.Visible = true;
+            RecordsPanel.Visible = false;
+        }
+
+        protected void BAllRecord_Click(object sender, EventArgs e)
+        {
+            TodayAppointPanel.Visible = false;
+            RecordsPanel.Visible = true;
+        }
+
+        protected void Linklogout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
         }
     }
 }

@@ -63,8 +63,7 @@ namespace ProjectDesignDemo
             {
                 if (TEmail.Text == "admin@khfh.com" && TPassword.Text == "admin")
                 {
-                    lbloginmsg.Text = "Admin Login";
-                    lbloginmsg.ForeColor = System.Drawing.Color.Green;
+                    Response.Redirect("adminindex.aspx");
                 }
                 else
                 {

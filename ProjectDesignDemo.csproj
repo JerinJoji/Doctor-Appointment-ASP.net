@@ -75,6 +75,7 @@
     <Content Include="ConfirmAppoint.html" />
     <Content Include="css\style.css" />
     <Content Include="img\iconcalendar.png" />
+    <Content Include="img\print.png" />
     <Content Include="index.aspx" />
     <Content Include="loginsignup.aspx" />
     <Content Include="PayCounterMail.html" />
