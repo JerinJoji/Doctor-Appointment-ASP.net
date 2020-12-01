@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Drawing;
+
 namespace ProjectDesignDemo
 {
 	public partial class adminindex : System.Web.UI.Page
@@ -58,6 +60,12 @@ namespace ProjectDesignDemo
             GridTodayAppoint.DataSource = dt;
             GridTodayAppoint.DataBind();
             conn.Close();
+            BSearch.Enabled = true;
+            BSRefresh.Enabled = false;
+            BSRefresh.BackColor = System.Drawing.Color.White;
+            BSRefresh.ForeColor = System.Drawing.Color.DarkGray;
+            BSearch.BackColor = Color.FromName("#c23838");
+            BSearch.ForeColor = Color.FromName("#fff");
         }
 
         private void LoadRecords()
@@ -69,6 +77,12 @@ namespace ProjectDesignDemo
             GridViewRecords.DataSource = dt;
             GridViewRecords.DataBind();
             conn.Close();
+            BRecSearch.Enabled = true;
+            BRecRefresh.Enabled = false;
+            BRecRefresh.BackColor = System.Drawing.Color.White;
+            BRecRefresh.ForeColor = System.Drawing.Color.DarkGray;
+            BRecSearch.BackColor = Color.FromName("#c23838");
+            BRecSearch.ForeColor = Color.FromName("#fff");
         }
 
         protected void LLHeading_Click(object sender, EventArgs e)
@@ -89,8 +103,12 @@ namespace ProjectDesignDemo
             sda.Fill(dt);
             GridTodayAppoint.DataSource = dt;
             GridTodayAppoint.DataBind();
-            BSRefresh.Visible = true;
-            BSearch.Visible = false;
+            BSRefresh.Enabled = true;
+            BSearch.Enabled = false;
+            BSearch.BackColor = System.Drawing.Color.White;
+            BSearch.ForeColor = System.Drawing.Color.DarkGray;
+            BSRefresh.BackColor = Color.FromName("#c23838");
+            BSRefresh.ForeColor = Color.FromName("#fff");
             TodayAppointPanel.Visible = true;
             RecordsPanel.Visible = false;
         }
@@ -108,8 +126,12 @@ namespace ProjectDesignDemo
             sda.Fill(dt);
             GridTodayAppoint.DataSource = dt;
             GridTodayAppoint.DataBind();
-            BSearch.Visible = true;
-            BSRefresh.Visible = false;
+            BSearch.Enabled = true;
+            BSRefresh.Enabled = false;
+            BSRefresh.BackColor = System.Drawing.Color.White;
+            BSRefresh.ForeColor = System.Drawing.Color.DarkGray;
+            BSearch.BackColor = Color.FromName("#c23838");
+            BSearch.ForeColor = Color.FromName("#fff");
             TodayAppointPanel.Visible = true;
             RecordsPanel.Visible = false;
         }
@@ -127,8 +149,12 @@ namespace ProjectDesignDemo
             sda.Fill(dt);
             GridViewRecords.DataSource = dt;
             GridViewRecords.DataBind();
-            BRecRefresh.Visible = true;
-            BRecSearch.Visible = false;
+            BRecRefresh.Enabled = true;
+            BRecSearch.Enabled = false;
+            BRecSearch.BackColor = System.Drawing.Color.White;
+            BRecSearch.ForeColor = System.Drawing.Color.DarkGray;
+            BRecRefresh.BackColor = Color.FromName("#c23838");
+            BRecRefresh.ForeColor = Color.FromName("#fff");
             TodayAppointPanel.Visible = false;
             RecordsPanel.Visible = true;
         }
@@ -146,8 +172,12 @@ namespace ProjectDesignDemo
             sda.Fill(dt);
             GridViewRecords.DataSource = dt;
             GridViewRecords.DataBind();
-            BRecSearch.Visible = true;
-            BRecRefresh.Visible = false;
+            BRecSearch.Enabled = true;
+            BRecRefresh.Enabled = false;
+            BRecRefresh.BackColor = System.Drawing.Color.White;
+            BRecRefresh.ForeColor = System.Drawing.Color.DarkGray;
+            BRecSearch.BackColor = Color.FromName("#c23838");
+            BRecSearch.ForeColor = Color.FromName("#fff");
             TodayAppointPanel.Visible = false;
             RecordsPanel.Visible = true;
         }

@@ -125,7 +125,8 @@
                         <td colspan="4">
                             <center>
                                 <asp:Button ID="BSearch" runat="server" Text="Search" CssClass="booknow" OnClick="BSearch_Click"/>
-                                <asp:Button runat="server" Text="Refresh" ID="BSRefresh" CssClass="booknow" OnClick="BSRefresh_Click" Visible="False"></asp:Button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:Button runat="server" Text="Refresh" ID="BSRefresh" CssClass="booknow" OnClick="BSRefresh_Click"></asp:Button>
                             </center>
                         </td>
                     </tr>
@@ -199,7 +200,8 @@
                         <td colspan="4">
                             <center>
                                 <asp:Button ID="BRecSearch" runat="server" Text="Search" CssClass="booknow" OnClick="BRecSearch_Click"/>
-                                <asp:Button runat="server" Text="Refresh" ID="BRecRefresh" CssClass="booknow" Visible="False" OnClick="BRecRefresh_Click"></asp:Button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:Button runat="server" Text="Refresh" ID="BRecRefresh" CssClass="booknow" OnClick="BRecRefresh_Click"></asp:Button>
                             </center>
                         </td>
                     </tr>
