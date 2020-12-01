@@ -19,7 +19,7 @@
         .auto-style6 {
             margin-left: 220px;
             margin-right: 246px;
-            margin-top: 197px;
+            margin-top: 56px;
             padding: 10px 10px;
         }
 
@@ -38,7 +38,7 @@
                 <tr>
                     <td style="width: 50%">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:LinkButton ID="LLHeading" runat="server" Font-Size="X-Large" ForeColor="White" Text="Doctors Appointment"></asp:LinkButton>
+                        <asp:LinkButton ID="LLHeading" runat="server" Font-Size="X-Large" ForeColor="White" Text="Doctors Appointment" OnClick="LLHeading_Click"></asp:LinkButton>
                     </td>
                     
                     <td class="auto-style5">
@@ -71,7 +71,8 @@
                         <asp:BoundField DataField="DepartmentName" HeaderText="Department" />
                         <asp:BoundField DataField="DoctorName" HeaderText="Doctor" />
                         <asp:BoundField DataField="Status" HeaderText="Status" />
-                        <asp:ButtonField ButtonType="Button" CommandName="checkedup" Text="Checked Up" />
+                        <asp:ButtonField ButtonType="Button" CommandName="checkedup" Text="Checked Up"/>
+                        <asp:ButtonField ButtonType="Button" CommandName="appoint" Text="Appointed" />
                     </Columns>
                     <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
