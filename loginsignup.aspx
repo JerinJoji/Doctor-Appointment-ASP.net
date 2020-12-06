@@ -83,7 +83,7 @@
             
                 <asp:Panel ID="PanelRegister" runat="server">
                     <div style="padding: 50px 50px 50px 50px">
-                        <asp:Label ID="LName" runat="server" Text="PATIENT NAME" CssClass="form-label"></asp:Label>
+                        <asp:Label ID="LName" runat="server" Text="PATIENT FULL NAME" CssClass="form-label"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:RequiredFieldValidator ID="RFVPname" runat="server" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red" ControlToValidate="TBPname"></asp:RequiredFieldValidator>
                         <br />

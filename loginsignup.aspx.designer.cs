@@ -519,31 +519,31 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.Label lblerroremail;
 
         /// <summary>
-        /// BReset control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BReset;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// BRegSubmit control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BRegSubmit;
+        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
-        /// BCancel control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BCancel;
+        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
         /// ActivationPanel control.
