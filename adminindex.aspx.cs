@@ -18,8 +18,10 @@ namespace ProjectDesignDemo
 		{
             TodayAppointPanel.Visible = true;
             RecordsPanel.Visible = false;
+            PatientsPanel.Visible = false;
             LoadPage();
             LoadRecords();
+            LoadPatients();
         }
 
         protected void GridTodayAppoint_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -47,7 +49,6 @@ namespace ProjectDesignDemo
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 LoadPage();
-
             }
         }
 
@@ -85,6 +86,23 @@ namespace ProjectDesignDemo
             BRecSearch.ForeColor = Color.FromName("#fff");
         }
 
+        private void LoadPatients()
+        {
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT OpdNo,PatientName,FathersName,Phone,Email,DateofBirth,Gender,District,State,pincode,AadharNo FROM Patients", conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            UserrecordsGridView.DataSource = dt;
+            UserrecordsGridView.DataBind();
+            conn.Close();
+            BPSearch.Enabled = true;
+            BPRefresh.Enabled = false;
+            BPRefresh.BackColor = System.Drawing.Color.White;
+            BPRefresh.ForeColor = System.Drawing.Color.DarkGray;
+            BPSearch.BackColor = Color.FromName("#c23838");
+            BPSearch.ForeColor = Color.FromName("#fff");
+        }
+
         protected void LLHeading_Click(object sender, EventArgs e)
         {
             Response.Redirect("adminindex.aspx");
@@ -111,6 +129,7 @@ namespace ProjectDesignDemo
             BSRefresh.ForeColor = Color.FromName("#fff");
             TodayAppointPanel.Visible = true;
             RecordsPanel.Visible = false;
+            PatientsPanel.Visible = false;
         }
 
         protected void BSRefresh_Click(object sender, EventArgs e)
@@ -134,6 +153,7 @@ namespace ProjectDesignDemo
             BSearch.ForeColor = Color.FromName("#fff");
             TodayAppointPanel.Visible = true;
             RecordsPanel.Visible = false;
+            PatientsPanel.Visible = false;
         }
 
         protected void BRecSearch_Click(object sender, EventArgs e)
@@ -157,6 +177,7 @@ namespace ProjectDesignDemo
             BRecRefresh.ForeColor = Color.FromName("#fff");
             TodayAppointPanel.Visible = false;
             RecordsPanel.Visible = true;
+            PatientsPanel.Visible = false;
         }
 
         protected void BRecRefresh_Click(object sender, EventArgs e)
@@ -180,6 +201,7 @@ namespace ProjectDesignDemo
             BRecSearch.ForeColor = Color.FromName("#fff");
             TodayAppointPanel.Visible = false;
             RecordsPanel.Visible = true;
+            PatientsPanel.Visible = false;
         }
 
         protected void BTodayAppoint_Click(object sender, EventArgs e)
@@ -192,11 +214,63 @@ namespace ProjectDesignDemo
         {
             TodayAppointPanel.Visible = false;
             RecordsPanel.Visible = true;
+            PatientsPanel.Visible = false;
         }
 
         protected void Linklogout_Click(object sender, EventArgs e)
         {
             Response.Redirect("index.aspx");
+        }
+
+        protected void BPatients_Click(object sender, EventArgs e)
+        {
+            TodayAppointPanel.Visible = false;
+            RecordsPanel.Visible = false;
+            PatientsPanel.Visible = true;
+        }
+
+        protected void BPSearch_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand query = new SqlCommand("SELECT OpdNo,PatientName,FathersName,Phone,Email,DateofBirth,Gender,District,State,pincode,AadharNo FROM Patients WHERE OpdNo like '%'+@OpdNo+'%' and PatientName like '%'+@Patientname+'%'", conn);
+            query.Parameters.AddWithValue("Opdno", TBSOpdno.Text);
+            query.Parameters.AddWithValue("Patientname", TBName.Text);
+            DataTable dt = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter(query);
+            sda.Fill(dt);
+            UserrecordsGridView.DataSource = dt;
+            UserrecordsGridView.DataBind();
+            BPRefresh.Enabled = true;
+            BPSearch.Enabled = false;
+            BPSearch.BackColor = System.Drawing.Color.White;
+            BPSearch.ForeColor = System.Drawing.Color.DarkGray;
+            BPRefresh.BackColor = Color.FromName("#c23838");
+            BPRefresh.ForeColor = Color.FromName("#fff");
+            TodayAppointPanel.Visible = false;
+            RecordsPanel.Visible = false;
+            PatientsPanel.Visible = true;
+        }
+
+        protected void BPRefresh_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand query = new SqlCommand("SELECT OpdNo,PatientName,FathersName,Phone,Email,DateofBirth,Gender,District,State,pincode,AadharNo FROM Patients WHERE OpdNo like '%'+@OpdNo+'%' and PatientName like '%'+@Patientname+'%'", conn);
+            query.Parameters.AddWithValue("Opdno", "");
+            query.Parameters.AddWithValue("Patientname", "");
+            DataTable dt = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter(query);
+            sda.Fill(dt);
+            UserrecordsGridView.DataSource = dt;
+            UserrecordsGridView.DataBind();
+            BPRefresh.Enabled = false;
+            BPSearch.Enabled = true;
+            BPRefresh.BackColor = System.Drawing.Color.White;
+            BPRefresh.ForeColor = System.Drawing.Color.DarkGray;
+            BPSearch.BackColor = Color.FromName("#c23838");
+            BPSearch.ForeColor = Color.FromName("#fff");
+            TodayAppointPanel.Visible = false;
+            RecordsPanel.Visible = false;
+            PatientsPanel.Visible = true;
         }
     }
 }

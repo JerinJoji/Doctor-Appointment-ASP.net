@@ -380,5 +380,16 @@ namespace ProjectDesignDemo
                 lblSuccess.Text = ex.Message;
             }
         }
+
+        protected void UserrecordGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if(e.CommandName == "receipt")
+            {
+                int row = Convert.ToInt32(e.CommandArgument.ToString());
+                string recordid = UserrecordGridView.Rows[row].Cells[0].Text;
+                Session["recordid"] = recordid;
+                Response.Redirect("AppointReceipt.aspx");
+            }
+        }
     }
 }

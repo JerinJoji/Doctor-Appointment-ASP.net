@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminindex.aspx" />
+    <Content Include="AppointReceipt.aspx" />
     <Content Include="App_Data\ProjectData.mdf" />
     <Content Include="App_Data\ProjectData_log.ldf">
       <DependentUpon>ProjectData.mdf</DependentUpon>
@@ -128,6 +129,13 @@
     <Compile Include="adminindex.aspx.designer.cs">
       <DependentUpon>adminindex.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AppointReceipt.aspx.cs">
+      <DependentUpon>AppointReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppointReceipt.aspx.designer.cs">
+      <DependentUpon>AppointReceipt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -141,6 +149,11 @@
     </Compile>
     <Compile Include="loginsignup.aspx.designer.cs">
       <DependentUpon>loginsignup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="useredit.aspx.cs">
@@ -161,6 +174,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="ReportDataSet.xsc">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="ReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ReportDataSet.xss">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -168,7 +192,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="AppointReceipt.rdlc" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

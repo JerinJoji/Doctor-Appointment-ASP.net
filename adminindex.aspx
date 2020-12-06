@@ -51,6 +51,9 @@
                 background-color: #c23838;
                 border-color: #c23838;
             }
+        .auto-style7 {
+            width: 12%;
+        }
     </style>
 
 </head>
@@ -79,6 +82,8 @@
             <asp:Button ID="BTodayAppoint" runat="server" Text="Today's Appointment" CssClass="tabs" OnClick="BTodayAppoint_Click"/>
             &nbsp;&nbsp;&nbsp;
             <asp:Button ID="BAllRecord" runat="server" Text="Records" CssClass="tabs" OnClick="BAllRecord_Click"/>
+            &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="BPatients" runat="server" Text="Patients" CssClass="tabs" OnClick="BPatients_Click"/>
             <br />
             <br />
             <asp:Panel ID="TodayAppointPanel" runat="server">
@@ -229,6 +234,56 @@
                     <SortedDescendingHeaderStyle BackColor="#820000" />
                 </asp:GridView>
 
+            </asp:Panel>
+
+            <asp:Panel ID="PatientsPanel" runat="server">
+                <center>
+                    <h2>Patients</h2>
+                </center>
+                <br />
+                <br />
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width:25%; padding:0px 10px;">
+                            <asp:Label ID="Label10" runat="server" Text="OPD No." CssClass="form-label"></asp:Label>
+                            <br />
+                            <asp:TextBox runat="server" CssClass="form-input" ID="TBSOpdno"></asp:TextBox>
+                        </td>
+                        <td style="width:25%; padding:0px 10px;">
+                            <asp:Label ID="Label11" runat="server" Text="Name" CssClass="form-label"></asp:Label>
+                            <br />
+                            <asp:TextBox runat="server" CssClass="form-input" ID="TBName"></asp:TextBox></td>
+                        <td style="padding:0px 10px;" class="auto-style7">
+                            <asp:Button ID="BPSearch" runat="server" Text="Search" CssClass="booknow" OnClick="BPSearch_Click"/></td>
+                        <td style="width:25%; padding:0px 10px;">
+                            <asp:Button ID="BPRefresh" runat="server" Text="Refresh" CssClass="booknow" OnClick="BPRefresh_Click"/></td>
+                    </tr>
+                </table>
+                <asp:GridView ID="UserrecordsGridView" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                    <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:BoundField DataField="OpdNo" HeaderText="OPD ID" />
+                        <asp:BoundField DataField="PatientName" HeaderText="Name" />
+                        <asp:BoundField DataField="FathersName" HeaderText="Father's Name" />
+                        <asp:BoundField DataField="Phone" HeaderText="Phone" />
+                        <asp:BoundField DataField="Email" HeaderText="Email" />
+                        <asp:BoundField DataField="DateofBirth" HeaderText="DOB" />
+                        <asp:BoundField DataField="Gender" HeaderText="Gender" />
+                        <asp:BoundField DataField="District" HeaderText="District" />
+                        <asp:BoundField DataField="State" HeaderText="State" />
+                        <asp:BoundField DataField="pincode" HeaderText="Pincode" />
+                        <asp:BoundField DataField="AadharNo" HeaderText="Aadhar" />
+                    </Columns>
+                    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+                    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+                    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+                    <SortedDescendingHeaderStyle BackColor="#820000" />
+                </asp:GridView>
             </asp:Panel>
         </div>
     </form>

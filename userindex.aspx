@@ -390,7 +390,7 @@
                         </div>
                         <div style="padding:14px 14px">
                             <asp:Panel ID="GridAllViewPanel" runat="server">
-                                <asp:GridView ID="UserrecordGridView" runat="server" CssClass="modal-open" Font-Size="Medium" Width="100%" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="GridviewallDataSource" CellPadding="4" ForeColor="#333333" GridLines="None" >
+                                <asp:GridView ID="UserrecordGridView" runat="server" CssClass="modal-open" Font-Size="Medium" Width="100%" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="GridviewallDataSource" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="UserrecordGridView_RowCommand" >
                                 <AlternatingRowStyle Width="100px" BackColor="White"/>
                                 <Columns>
                                     <asp:BoundField DataField="RecordId" HeaderText="Record Id" SortExpression="RecordId" InsertVisible="False" ReadOnly="True" >
@@ -407,6 +407,7 @@
                                     </asp:BoundField>
                                     <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" >
                                     </asp:BoundField>
+                                    <asp:ButtonField ButtonType="Button" CommandName="receipt" Text="Receipt" />
                                 </Columns>
                                 <FooterStyle BackColor="#990000" ForeColor="White" Width="100px" Font-Bold="True"/>
                                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" Width="20%"/>
