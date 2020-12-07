@@ -31,6 +31,7 @@ namespace ProjectDesignDemo
             }
             else
             {
+                checkdr.Close();
                 String insertSql = "INSERT INTO Patients(PatientName,FathersName,DateofBirth,Address,Village,PostOffice,PoliceStation,District,State,pincode,AadharNo,Phone,Email,Gender, Password)" +
                 "values (@PatientName,@FathersName,@DateofBirth,@Address,@Village,@PostOffice,@PoliceStation,@District,@State,@pincode,@AadharNo,@Phone,@Email,@Gender,@Password)";
                 SqlCommand cmd = new SqlCommand();
@@ -100,7 +101,6 @@ namespace ProjectDesignDemo
 
                 try
                 {
-                    con.Open();
                     cmd.ExecuteNonQuery();
                     sendUserDetails();
                     Response.Redirect("adminindex.aspx");
@@ -128,7 +128,7 @@ namespace ProjectDesignDemo
             MailMessage msg = new MailMessage();
             msg.Subject = "Admin Created Account - Doctor's Appointment";
             msg.Body = "Dear User, Your Account is Created by ADMIN and Some Information are to be filled. \n\n\n " +
-                "LOGIN ID: \n\n Username: " + TBEmail.Text+ "Password: admincreated123 \n\n Please Fill the Details and Change the password for Security.";
+                "LOGIN ID: \n\n Username: " + TBEmail.Text+ "\nPassword: admincreated123 \n\n Please Fill the Details and Change the password for Security.";
             string toaddress = TBEmail.Text;
             msg.To.Add(toaddress);
             string fromaddress = "jerinkjoji@gmail.com";
