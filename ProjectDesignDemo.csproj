@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminindex.aspx" />
+    <Content Include="AdminUserCreate.aspx" />
     <Content Include="AppointReceipt.aspx" />
     <Content Include="App_Data\ProjectData.mdf" />
     <Content Include="App_Data\ProjectData_log.ldf">
@@ -128,6 +129,13 @@
     </Compile>
     <Compile Include="adminindex.aspx.designer.cs">
       <DependentUpon>adminindex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUserCreate.aspx.cs">
+      <DependentUpon>AdminUserCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUserCreate.aspx.designer.cs">
+      <DependentUpon>AdminUserCreate.aspx</DependentUpon>
     </Compile>
     <Compile Include="AppointReceipt.aspx.cs">
       <DependentUpon>AppointReceipt.aspx</DependentUpon>

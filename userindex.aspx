@@ -419,7 +419,7 @@
                                 <SortedDescendingCellStyle BackColor="#FCF6C0" Width="100px"/>
                                 <SortedDescendingHeaderStyle BackColor="#820000" Width="100px"/>
                             </asp:GridView>
-                            <asp:SqlDataSource ID="GridviewallDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [RecordId], [DoctorName], [DepartmentName], [AppointmentDate], [Status] FROM [Appointment] WHERE ([OpdId] = @OpdId) ORDER BY [AppointmentDate]">
+                            <asp:SqlDataSource ID="GridviewallDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [RecordId], [DoctorName], [DepartmentName], [AppointmentDate], [Status] FROM [Appointment] WHERE ([OpdId] = @OpdId) ORDER BY [AppointmentDate] DESC">
                                 <SelectParameters>
                                     <asp:SessionParameter Name="OpdId" SessionField="opdno" Type="Int32" />
                                 </SelectParameters>

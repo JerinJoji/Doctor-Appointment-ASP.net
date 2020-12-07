@@ -19,6 +19,8 @@ namespace ProjectDesignDemo
             TodayAppointPanel.Visible = true;
             RecordsPanel.Visible = false;
             PatientsPanel.Visible = false;
+            ddlDepart.Enabled = false;
+            ddlDoctorlist.Enabled = false;
             LoadPage();
             LoadRecords();
             LoadPatients();
@@ -50,6 +52,18 @@ namespace ProjectDesignDemo
                 conn.Close();
                 LoadPage();
             }
+
+            if (e.CommandName == "deleterow")
+            {
+                int row = Convert.ToInt32(e.CommandArgument.ToString());
+                string recordid = GridTodayAppoint.Rows[row].Cells[0].Text;
+                SqlCommand cmd = new SqlCommand("DELETE FROM Appointment WHERE RecordId=@recordid", conn);
+                cmd.Parameters.AddWithValue("@recordid", recordid);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                LoadPage();
+            }
         }
 
         private void LoadPage()
@@ -72,7 +86,7 @@ namespace ProjectDesignDemo
         private void LoadRecords()
         {
             conn.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT RecordId,OpdId,PatientName,DepartmentName,DoctorName,AppointmentDate,Status FROM Appointment JOIN Patients ON Appointment.OpdId = Patients.OpdNo", conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT RecordId,OpdId,PatientName,DepartmentName,DoctorName,AppointmentDate,Status FROM Appointment JOIN Patients ON Appointment.OpdId = Patients.OpdNo ORDER BY Appointment.AppointmentDate DESC", conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             GridViewRecords.DataSource = dt;
@@ -208,6 +222,7 @@ namespace ProjectDesignDemo
         {
             TodayAppointPanel.Visible = true;
             RecordsPanel.Visible = false;
+            PatientsPanel.Visible = false;
         }
 
         protected void BAllRecord_Click(object sender, EventArgs e)
@@ -271,6 +286,102 @@ namespace ProjectDesignDemo
             TodayAppointPanel.Visible = false;
             RecordsPanel.Visible = false;
             PatientsPanel.Visible = true;
+        }
+
+        
+        protected void BCheckID_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * from Patients where OpdNo = @opd", conn);
+            conn.Open();
+            cmd.Parameters.AddWithValue("@opd", TBOPD.Text);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                ddlDepart.Enabled = true;
+                ddlDoctorlist.Enabled = true;
+                lblCheckId.Text = "";
+            }
+            else
+            {
+                lblCheckId.Text = "No Records Found";
+            }
+            conn.Close();
+        }
+
+        protected void btnAppointment_Click(object sender, EventArgs e)
+        {
+            String insertAppoint = "INSERT INTO Appointment(OpdId,DoctorName,DepartmentName,AppointmentDate,Status)" +
+                "values (@Opdno,@doctorname,@departname,@Appointdate,@Status)";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = insertAppoint;
+
+            SqlParameter Opdno = new SqlParameter("@Opdno", SqlDbType.Int);
+            Opdno.Value = TBOPD.Text;
+            cmd.Parameters.Add(Opdno);
+
+            SqlParameter doctorname = new SqlParameter("@doctorname", SqlDbType.VarChar, 50);
+            doctorname.Value = ddlDoctorlist.SelectedItem.Value;
+            cmd.Parameters.Add(doctorname);
+
+            SqlParameter departname = new SqlParameter("@departname", SqlDbType.VarChar, 50);
+            departname.Value = ddlDepart.SelectedItem.Value;
+            cmd.Parameters.Add(departname);
+
+            SqlParameter appointdate = new SqlParameter("@Appointdate", SqlDbType.Date);
+            appointdate.Value = DateTime.Now;
+            cmd.Parameters.Add(appointdate);
+
+            SqlParameter status = new SqlParameter("@Status", SqlDbType.VarChar, 50);
+            status.Value = "Emergency Appointed";
+            cmd.Parameters.Add(status);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                conn.Close();
+                LoadPage();
+                LoadRecords();
+            }
+            catch (SqlException ex)
+            {
+                string errorMessage = "Error in Registering Appointment";
+                errorMessage += ex.Message;
+                throw new Exception(errorMessage);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        protected void ddlDepart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ddlDepart.Enabled = true;
+            ddlDoctorlist.Enabled = true;
+            SqlCommand query = new SqlCommand("SELECT DocName FROM Doctor JOIN Department ON Doctor.DepartId = Department.DeptId AND Department.DeptName = @ddlItem", conn);
+            conn.Open();
+            query.Parameters.AddWithValue("@ddlItem", ddlDepart.SelectedItem.Value);
+            SqlDataReader dr = query.ExecuteReader();
+            ddlDoctorlist.Items.Clear();
+            while (dr.Read())
+            {
+                ddlDoctorlist.Items.Add(dr.GetSqlString(0).ToString());
+            }
+        }
+
+        protected void LLCreateAcc_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminUserCreate.aspx");
+        }
+
+        protected void GridTodayAppoint_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            
         }
     }
 }

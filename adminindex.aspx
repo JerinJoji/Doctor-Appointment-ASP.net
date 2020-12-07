@@ -54,6 +54,19 @@
         .auto-style7 {
             width: 12%;
         }
+
+        .auto-style22 {
+            height: 35px;
+        }
+
+        .auto-style11 {
+                border-radius: 6px;
+                margin-top: 6px;
+                margin-bottom: 25px;
+                padding: 0px 10px;
+                font-size: 22px;
+                font-variant: all-small-caps;
+            }
     </style>
 
 </head>
@@ -148,6 +161,7 @@
                         <asp:BoundField DataField="Status" HeaderText="Status" />
                         <asp:ButtonField ButtonType="Button" CommandName="checkedup" Text="Checked Up"/>
                         <asp:ButtonField ButtonType="Button" CommandName="appoint" Text="Appointed" />
+                        <asp:ButtonField ButtonType="Button" CommandName="deleterow" Text="Delete" />
                     </Columns>
                     <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -163,7 +177,7 @@
 
             <asp:Panel ID="RecordsPanel" runat="server">
                 <center>
-                    <h2>Patient Records</h2>
+                    <h2>Appointment Records</h2>
                 </center>
                 <br />
                 <br />
@@ -284,6 +298,72 @@
                     <SortedDescendingCellStyle BackColor="#FCF6C0" />
                     <SortedDescendingHeaderStyle BackColor="#820000" />
                 </asp:GridView>
+            </asp:Panel>
+
+            <br /><br /><br /><br />
+            <asp:Panel ID="EmergencyPanel" runat="server" BorderStyle="Solid">
+                <center>
+                    <h2>Emergency</h2>
+                </center>
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:LinkButton ID="LLCreateAcc" runat="server" Font-Bold="True" Font-Size="Small" OnClick="LLCreateAcc_Click">Create Quick Account</asp:LinkButton>
+                <br />
+                <div style="margin-left:25%; margin-right:25%">
+                    <table style="width: 100%;">
+                                        <tr>
+                                            <td class="auto-style22">
+                                                <center>
+                                                    <asp:Label ID="Label15" runat="server" Text="OPD Number" CssClass="form-label"></asp:Label>
+                                                </center>
+                                            </td>
+
+                                            <td class="auto-style22">
+                                                <asp:TextBox ID="TBOPD" runat="server" CssClass="auto-style11" Width="227px"></asp:TextBox>
+                                                <asp:Button ID="BCheckID" runat="server" Text="Check ID" CssClass="booknow" OnClick="BCheckID_Click"/>
+                                                <br />
+                                                <asp:Label ID="lblCheckId" runat="server" Text="" Font-Size="Medium" ForeColor="Red"></asp:Label>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="auto-style22">
+                                                <center>
+                                                    <asp:Label ID="Label12" runat="server" Text="CHOOSE DEPARTMENT" CssClass="form-label"></asp:Label>
+                                                </center>
+                                            </td>
+
+                                            <td class="auto-style22">
+                                                <asp:DropDownList ID="ddlDepart" runat="server" CssClass ="form-input" Width="347px" DataSourceID="DepartmentDS" DataTextField="DeptName" DataValueField="DeptName" AutoPostBack="True" OnSelectedIndexChanged="ddlDepart_SelectedIndexChanged">
+                                                </asp:DropDownList>
+                                                <asp:SqlDataSource ID="DepartmentDS" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [DeptName] FROM [Department]"></asp:SqlDataSource>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <center>
+                                                    <asp:Label ID="Label13" runat="server" Text="CHOOSE DOCTOR" CssClass="form-label"></asp:Label>
+                                                </center>
+                                            </td>
+
+                                            <td>
+                                                <asp:DropDownList ID="ddlDoctorlist" runat="server" CssClass ="form-input" Width="347px" AutoPostBack="True">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <center> 
+                                                    <asp:Button ID="btnAppointment" runat="server" Text="BOOK APPOINTMENT" CssClass="booknow" OnClick="btnAppointment_Click"/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
+                                            </td>
+                                        </tr>
+                                        </table>
+                </div>
             </asp:Panel>
         </div>
     </form>

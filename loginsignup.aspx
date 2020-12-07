@@ -99,7 +99,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:RequiredFieldValidator ID="RFVPhone" runat="server" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red" ControlToValidate="TBPhone"></asp:RequiredFieldValidator>
                         <br />
-                        <asp:TextBox ID="TBPhone" runat="server" CssClass="form-input" TextMode="Phone"></asp:TextBox>
+                        <asp:TextBox ID="TBPhone" runat="server" CssClass="form-input" TextMode="Phone" MaxLength="10"></asp:TextBox>
                     
                         <asp:Label ID="LEmail" runat="server" CssClass="form-label" Text="EMAIL"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
