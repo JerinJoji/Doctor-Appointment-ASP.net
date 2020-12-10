@@ -11,7 +11,9 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+        <link href= 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <link href="css/style.css" rel="stylesheet" />
     
         <style type="text/css">
@@ -123,6 +125,29 @@
                 height: 35px;
             }
         </style>
+        <script>
+            $(document).ready(function () {
+
+                $("#TBAppointDate").datepicker({
+                    beforeShowDay: nonWorkingDates,
+                    numberOfMonths: 2,
+                    minDate: 0,
+                    maxDate: '+3M',
+                    firstDay: 1
+                });
+
+                function nonWorkingDates(date) {
+                    var day = date.getDay();
+                    var closedDays = [[0]];
+                    for (var i = 0; i < closedDays.length; i++) {
+                        if (day == closedDays[i][0]) {
+                            return [false];
+                        }
+                    }
+                    return [true];
+                }
+            });
+        </script>
     </head>
 
     <body>
@@ -232,7 +257,7 @@
                                             </td>
                                             
                                             <td class="auto-style21">
-                                                <asp:TextBox ID="TBAppointDate" runat="server" CssClass="auto-style11" Width="227px" TextMode="Date"></asp:TextBox>
+                                                <asp:TextBox ID="TBAppointDate" runat="server" CssClass="auto-style11" Width="227px"></asp:TextBox>
                                             </td>
                                         </tr>
 
