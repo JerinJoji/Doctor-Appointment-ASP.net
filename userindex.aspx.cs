@@ -45,6 +45,9 @@ namespace ProjectDesignDemo
                     Session["Fname"] = dr.GetValue(2).ToString();
                     Session["DOB"] = dr.GetValue(3).ToString();
                     Session["address"] = dr.GetValue(4).ToString();
+                    Session["village"] = dr.GetValue(5).ToString();
+                    Session["post"] = dr.GetValue(6).ToString();
+                    Session["police"] = dr.GetValue(7).ToString();
                     Session["district"] = dr.GetValue(8).ToString();
                     Session["state"] = dr.GetValue(9).ToString();
                     Session["pincode"] = dr.GetValue(10).ToString();
@@ -390,6 +393,11 @@ namespace ProjectDesignDemo
                 Session["recordid"] = recordid;
                 Response.Redirect("AppointReceipt.aspx");
             }
+        }
+
+        protected void LBEdit_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("useredit.aspx");
         }
     }
 }

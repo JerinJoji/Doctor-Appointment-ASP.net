@@ -69,8 +69,11 @@
                     <br />
                     <asp:TextBox ID="TBPincode" runat="server" CssClass="form-input form-input-half" TextMode="Number"></asp:TextBox>
 
+                    <br />
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+
                     <center>
-                        <asp:Button ID="BUpdate" runat="server" Height="40px" Text="UPDATE" Width="104px" CssClass="booknow"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="BUpdate" runat="server" Height="40px" Text="UPDATE" Width="104px" CssClass="booknow" OnClick="BUpdate_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="BCancel" runat="server" Height="40px" Text="CANCEL" Width="104px" CssClass="booknow"/>
                     </center>
                 </div>

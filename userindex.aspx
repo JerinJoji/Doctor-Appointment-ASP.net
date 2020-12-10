@@ -141,7 +141,7 @@
 
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span class="glyphicon glyphicon-edit" style="left: 0px; top: -1px; height: 24px; color:white;">&nbsp;</span>
-                        <asp:LinkButton ID="LBEdit" runat="server" Font-Size="Large" ForeColor="White">Edit</asp:LinkButton>
+                        <asp:LinkButton ID="LBEdit" runat="server" Font-Size="Large" ForeColor="White" OnClick="LBEdit_Click">Edit</asp:LinkButton>
 
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span class="glyphicon glyphicon-log-out" style="left: 0px; top: -1px; height: 24px; color:white;">&nbsp;</span>
