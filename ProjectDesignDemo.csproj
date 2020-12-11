@@ -93,7 +93,6 @@
   <ItemGroup>
     <Content Include="adminindex.aspx" />
     <Content Include="AdminUserCreate.aspx" />
-    <Content Include="AppointReceipt.aspx" />
     <Content Include="App_Data\ProjectData.mdf" />
     <Content Include="App_Data\ProjectData_log.ldf">
       <DependentUpon>ProjectData.mdf</DependentUpon>
@@ -140,13 +139,6 @@
     <Compile Include="AdminUserCreate.aspx.designer.cs">
       <DependentUpon>AdminUserCreate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AppointReceipt.aspx.cs">
-      <DependentUpon>AppointReceipt.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AppointReceipt.aspx.designer.cs">
-      <DependentUpon>AppointReceipt.aspx</DependentUpon>
-    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -168,11 +160,6 @@
     <Compile Include="Receipt.aspx.designer.cs">
       <DependentUpon>Receipt.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ReportDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="useredit.aspx.cs">
       <DependentUpon>useredit.aspx</DependentUpon>
@@ -192,17 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="ReportDataSet.xsc">
-      <DependentUpon>ReportDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="ReportDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ReportDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="ReportDataSet.xss">
-      <DependentUpon>ReportDataSet.xsd</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

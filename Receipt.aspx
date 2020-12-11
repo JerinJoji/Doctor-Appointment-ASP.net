@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Appointment Receipt</title>
     <script src="jsfiles/html2canvas.min.js"></script>
     <script src="jsfiles/pdfmake.min.js"></script>
     <script type="text/javascript">
