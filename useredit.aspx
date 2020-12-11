@@ -74,7 +74,7 @@
 
                     <center>
                         <asp:Button ID="BUpdate" runat="server" Height="40px" Text="UPDATE" Width="104px" CssClass="booknow" OnClick="BUpdate_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="BCancel" runat="server" Height="40px" Text="CANCEL" Width="104px" CssClass="booknow"/>
+                        <asp:Button ID="BCancel" runat="server" Height="40px" Text="CANCEL" Width="104px" CssClass="booknow" OnClick="BCancel_Click"/>
                     </center>
                 </div>
             </asp:Panel>

@@ -28,28 +28,15 @@ namespace ProjectDesignDemo
         protected void BUpdate_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
-
-            SqlCommand cmd = new SqlCommand("UPDATE Patients SET " +
-                "PatientName='"+TBPname.Text+"', FathersName='"+TBFname.Text+"', Phone='"+TBPhone.Text+"', " +
-                "Password='"+TBPASSWORD.Text+"', Address='"+TBAddress.Text+"',Village ='"+TBVillage.Text+"', " +
-                "PostOffice='"+TBPO.Text+"', PoliceStation='"+TBPS.Text+"', District='"+TBDistrict.Text+"', " +
-                "State='"+DropDownState.SelectedItem.Value+"', pincode='"+TBPincode.Text+"' WHERE OpdNo ="+ Convert.ToInt32(Session["opd"])+"", conn);
-            conn.Open();
-            /*cmd.Parameters.AddWithValue("@patientname",TBPname.Text);
-            cmd.Parameters.AddWithValue("@Fathers", TBFname.Text);
-            cmd.Parameters.AddWithValue("@phone", TBPhone.Text);
-            cmd.Parameters.AddWithValue("@password", TBPASSWORD.Text);
-            cmd.Parameters.AddWithValue("@address", TBAddress.Text);
-            cmd.Parameters.AddWithValue("@village", TBVillage.Text);
-            cmd.Parameters.AddWithValue("@post", TBPO.Text);
-            cmd.Parameters.AddWithValue("@police", TBPS.Text);
-            cmd.Parameters.AddWithValue("@district", TBDistrict.Text);
-            cmd.Parameters.AddWithValue("@state", DropDownState.SelectedItem.Value);
-            cmd.Parameters.AddWithValue("@pin", TBPincode.Text);
-            cmd.Parameters.AddWithValue("@opd",Convert.ToInt32(Session["opd"]));*/
-            cmd.ExecuteNonQuery();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            String sql = "UPDATE Patients SET PatientName='" + TBPname.Text + "', FathersName='" + TBFname.Text + "', Phone='" + TBPhone.Text + "', Password='" + TBPASSWORD.Text + "', Address='" + TBAddress.Text + "',Village ='" + TBVillage.Text + "',PostOffice='" + TBPO.Text + "', PoliceStation='" + TBPS.Text + "', District='" + TBDistrict.Text + "',State='" + DropDownState.SelectedItem.Value + "', pincode='" + TBPincode.Text + "' WHERE OpdNo = " + Convert.ToInt32(Session["opdno"]);
+            
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            
+            adapter.UpdateCommand = new SqlCommand(sql, conn);
+            adapter.UpdateCommand.ExecuteNonQuery();
+            cmd.Dispose();
             conn.Close();
-            Label1.Text = "Successful";
 
             Session["Pname"] = TBPname.Text;
             Session["Fname"] = TBFname.Text;
@@ -63,6 +50,11 @@ namespace ProjectDesignDemo
             Session["state"] = DropDownState.SelectedItem.Value;
             Session["pincode"] = TBPincode.Text;
             Response.Redirect("userindex.aspx");
+        }
+
+        protected void BCancel_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

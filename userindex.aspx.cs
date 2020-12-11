@@ -399,9 +399,9 @@ namespace ProjectDesignDemo
             }
         }
 
-        protected void LBEdit_Click(object sender, EventArgs e)
+        /*protected void LBEdit_Click(object sender, EventArgs e)
         {
             Response.Redirect("useredit.aspx");
-        }
+        }*/
     }
 }
