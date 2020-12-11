@@ -103,8 +103,11 @@
     <Content Include="img\iconcalendar.png" />
     <Content Include="img\print.png" />
     <Content Include="index.aspx" />
+    <Content Include="jsfiles\html2canvas.min.js" />
+    <Content Include="jsfiles\pdfmake.min.js" />
     <Content Include="loginsignup.aspx" />
     <Content Include="PayCounterMail.html" />
+    <Content Include="Receipt.aspx" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -157,6 +160,13 @@
     </Compile>
     <Compile Include="loginsignup.aspx.designer.cs">
       <DependentUpon>loginsignup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt.aspx.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Receipt.aspx.designer.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

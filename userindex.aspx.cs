@@ -390,8 +390,12 @@ namespace ProjectDesignDemo
             {
                 int row = Convert.ToInt32(e.CommandArgument.ToString());
                 string recordid = UserrecordGridView.Rows[row].Cells[0].Text;
+                Session["Adoc"] = UserrecordGridView.Rows[row].Cells[1].Text;
+                Session["Adep"] = UserrecordGridView.Rows[row].Cells[2].Text;
+                Session["Adate"] = UserrecordGridView.Rows[row].Cells[3].Text;
+                Session["AStatus"] = UserrecordGridView.Rows[row].Cells[4].Text;
                 Session["recordid"] = recordid;
-                Response.Redirect("AppointReceipt.aspx");
+                Response.Redirect("Receipt.aspx");
             }
         }
 
