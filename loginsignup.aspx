@@ -47,18 +47,7 @@
                 font-size: 17px;
             }
         </style>
-        <script>
-            $(function () {
-                $('#TBDob').datepicker(
-                    {
-                        dateFormat: 'dd/mm/yy',
-                        changeMonth: true,
-                        changeYear: true,
-                        yearRange: '1950:2100',
-                        maxDate: 0
-                    });
-            })
-        </script>
+        
     </head>
 
     <body style="background-color:#c23838">
@@ -142,7 +131,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:RequiredFieldValidator ID="RFVDob" runat="server" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red" ControlToValidate="TBDob"></asp:RequiredFieldValidator>
                         <br />
-                        <asp:TextBox ID="TBDob" runat="server" CssClass="form-input form-input-half"></asp:TextBox>
+                        <asp:TextBox ID="TBDob" runat="server" CssClass="form-input form-input-half" TextMode="Date"></asp:TextBox>
                         <br />
                     
                         <asp:Label ID="LAddress" runat="server" CssClass="form-label" Text="ADDRESS"></asp:Label>

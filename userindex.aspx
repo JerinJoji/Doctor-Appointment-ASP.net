@@ -125,29 +125,7 @@
                 height: 35px;
             }
         </style>
-        <script>
-            $(document).ready(function () {
-
-                $("#TBAppointDate").datepicker({
-                    beforeShowDay: nonWorkingDates,
-                    numberOfMonths: 2,
-                    minDate: 0,
-                    maxDate: '+3M',
-                    firstDay: 1
-                });
-
-                function nonWorkingDates(date) {
-                    var day = date.getDay();
-                    var closedDays = [[0]];
-                    for (var i = 0; i < closedDays.length; i++) {
-                        if (day == closedDays[i][0]) {
-                            return [false];
-                        }
-                    }
-                    return [true];
-                }
-            });
-        </script>
+        
     </head>
 
     <body>
@@ -253,7 +231,7 @@
                                             </td>
                                             
                                             <td class="auto-style21">
-                                                <asp:TextBox ID="TBAppointDate" runat="server" CssClass="auto-style11" Width="227px"></asp:TextBox>
+                                                <asp:TextBox ID="TBAppointDate" runat="server" CssClass="auto-style11" Width="227px" TextMode="Date"></asp:TextBox>
                                             </td>
                                         </tr>
 

@@ -98,12 +98,17 @@
       <DependentUpon>ProjectData.mdf</DependentUpon>
     </Content>
     <Content Include="ConfirmAppoint.html" />
+    <Content Include="css\pikaday.css" />
+    <Content Include="css\site.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\theme.css" />
+    <Content Include="css\triangle.css" />
     <Content Include="img\iconcalendar.png" />
     <Content Include="img\print.png" />
     <Content Include="index.aspx" />
     <Content Include="jsfiles\html2canvas.min.js" />
     <Content Include="jsfiles\pdfmake.min.js" />
+    <Content Include="jsfiles\pikaday.js" />
     <Content Include="loginsignup.aspx" />
     <Content Include="PayCounterMail.html" />
     <Content Include="Receipt.aspx" />
