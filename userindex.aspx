@@ -231,7 +231,19 @@
                                             </td>
                                             
                                             <td class="auto-style21">
-                                                <asp:TextBox ID="TBAppointDate" runat="server" CssClass="auto-style11" Width="227px" TextMode="Date"></asp:TextBox>
+                                                <asp:TextBox ID="TBAppointDate" runat="server" CssClass="auto-style11" Width="227px"></asp:TextBox>
+                                                <asp:ImageButton ID="IBCal" runat="server" ImageUrl="~/img/iconcalendar.png" OnClick="IBCal_Click1" />
+                                                <br />
+                                                <asp:Calendar ID="CalAppoint" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="269px" OnDayRender="CalAppoint_DayRender1" OnSelectionChanged="CalAppoint_SelectionChanged">
+                                                    <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                                                    <NextPrevStyle VerticalAlign="Bottom" />
+                                                    <OtherMonthDayStyle ForeColor="#808080" />
+                                                    <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                                                    <SelectorStyle BackColor="#CCCCCC" />
+                                                    <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                                                    <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                                                    <WeekendDayStyle BackColor="#FFFFCC" />
+                                                </asp:Calendar>
                                             </td>
                                         </tr>
 

@@ -222,6 +222,24 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.TextBox TBAppointDate;
 
         /// <summary>
+        /// IBCal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton IBCal;
+
+        /// <summary>
+        /// CalAppoint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar CalAppoint;
+
+        /// <summary>
         /// lblslotfull control.
         /// </summary>
         /// <remarks>

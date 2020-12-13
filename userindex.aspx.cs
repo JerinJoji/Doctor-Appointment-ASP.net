@@ -30,6 +30,7 @@ namespace ProjectDesignDemo
                 ddlSearchdate.Visible = true;
                 ddlSearchDept.Visible = true;
                 ddlSearchDoctor.Visible = true;
+                CalAppoint.Visible = false;
 
                 SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
 
@@ -396,6 +397,35 @@ namespace ProjectDesignDemo
                 Session["AStatus"] = UserrecordGridView.Rows[row].Cells[4].Text;
                 Session["recordid"] = recordid;
                 Response.Redirect("Receipt.aspx");
+            }
+        }
+
+        protected void CalAppoint_SelectionChanged(object sender, EventArgs e)
+        {
+            TBAppointDate.Text = CalAppoint.SelectedDate.ToShortDateString();
+            CalAppoint.Visible = false;
+        }
+
+        protected void IBCal_Click1(object sender, ImageClickEventArgs e)
+        {
+            if (CalAppoint.Visible)
+                CalAppoint.Visible = false;
+            else
+                CalAppoint.Visible = true;
+        }
+
+        protected void CalAppoint_DayRender1(object sender, DayRenderEventArgs e)
+        {
+            if (e.Day.Date < DateTime.Now.Date)
+            {
+                e.Day.IsSelectable = false;
+                e.Cell.ForeColor = System.Drawing.Color.Gray;
+            }
+
+            if (e.Day.Date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                e.Day.IsSelectable = false;
+                e.Cell.ForeColor = System.Drawing.Color.Gray;
             }
         }
 
