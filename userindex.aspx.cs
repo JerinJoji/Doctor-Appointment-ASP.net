@@ -82,7 +82,9 @@ namespace ProjectDesignDemo
 
         protected void Linklogout_Click(object sender, EventArgs e)
         {
+            Session.Clear();
             Response.Redirect("index.aspx");
+            
         }
 
         /*protected void ImageButton1_Click(object sender, ImageClickEventArgs e)

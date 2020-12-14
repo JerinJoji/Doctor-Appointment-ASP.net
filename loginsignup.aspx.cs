@@ -27,6 +27,7 @@ namespace ProjectDesignDemo
                 LoginButton.ForeColor = System.Drawing.Color.Black;
                 RegisterButton.BackColor = Color.FromName("#c23838");
                 RegisterButton.ForeColor = Color.FromName("#fff");
+                CalDOB.Visible = false;
             }
         }
 
@@ -260,6 +261,29 @@ namespace ProjectDesignDemo
             RegisterButton.ForeColor = System.Drawing.Color.Black;
             LoginButton.BackColor = Color.FromName("#c23838");
             LoginButton.ForeColor = Color.FromName("#fff");
+        }
+
+        protected void IBDOB_Click(object sender, ImageClickEventArgs e)
+        {
+            if (CalDOB.Visible)
+                CalDOB.Visible = false;
+            else
+                CalDOB.Visible = true;
+        }
+
+        protected void CalDOB_SelectionChanged(object sender, EventArgs e)
+        {
+            TBDob.Text = CalDOB.SelectedDate.ToString("yyyy-MM-dd");
+            CalDOB.Visible = false;
+        }
+
+        protected void CalDOB_DayRender(object sender, DayRenderEventArgs e)
+        {
+            if (e.Day.Date > DateTime.Now.Date)
+            {
+                e.Day.IsSelectable = false;
+                e.Cell.ForeColor = System.Drawing.Color.Gray;
+            }
         }
     }
 }
