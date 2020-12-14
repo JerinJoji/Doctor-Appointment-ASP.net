@@ -118,7 +118,7 @@ namespace ProjectDesignDemo
             da.Fill(dt);
             int appointcount = dt.Rows.Count;
 
-            if(appointcount >= 3)
+            if(appointcount > 3)
             {
                 lblslotfull.Text = "The Slots are full for this Date. Please Choose Another Date";
             }
@@ -402,7 +402,7 @@ namespace ProjectDesignDemo
 
         protected void CalAppoint_SelectionChanged(object sender, EventArgs e)
         {
-            TBAppointDate.Text = CalAppoint.SelectedDate.ToShortDateString();
+            TBAppointDate.Text = CalAppoint.SelectedDate.ToString("yyyy-MM-dd");
             CalAppoint.Visible = false;
         }
 
@@ -429,9 +429,6 @@ namespace ProjectDesignDemo
             }
         }
 
-        /*protected void LBEdit_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("useredit.aspx");
-        }*/
+        
     }
 }

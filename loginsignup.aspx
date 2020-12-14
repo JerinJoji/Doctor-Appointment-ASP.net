@@ -91,20 +91,23 @@
                         <asp:Label ID="LName" runat="server" Text="PATIENT FULL NAME" CssClass="form-label"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:RequiredFieldValidator ID="RFVPname" runat="server" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red" ControlToValidate="TBPname"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="TBPname" ErrorMessage="Wrong" Font-Size="Small" ForeColor="Red" ValidationExpression="^[a-zA-Z ]*$"></asp:RegularExpressionValidator>
                         <br />
                         <asp:TextBox ID="TBPname" runat="server" CssClass="form-input"></asp:TextBox>
 
                         <asp:Label ID="LFname" runat="server" Text="FATHER'S NAME" CssClass="form-label"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:RequiredFieldValidator ID="RFVFname" runat="server" ErrorMessage="Field Can't be Empty" ControlToValidate="TBFname" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="TBFname" ErrorMessage="Wrong" Font-Size="Small" ForeColor="Red" ValidationExpression="^[a-zA-Z ]*$"></asp:RegularExpressionValidator>
                         <br />
                         <asp:TextBox ID="TBFname" runat="server" CssClass="form-input"></asp:TextBox>
                     
                         <asp:Label ID="LPhone" runat="server" CssClass="form-label" Text="PHONE NUMBER"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:RequiredFieldValidator ID="RFVPhone" runat="server" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red" ControlToValidate="TBPhone"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TBPhone" ErrorMessage="Wrong" Font-Size="Small" ForeColor="Red" ValidationExpression="^\d{10}$"></asp:RegularExpressionValidator>
                         <br />
-                        <asp:TextBox ID="TBPhone" runat="server" CssClass="form-input" TextMode="Phone" MaxLength="10"></asp:TextBox>
+                        <asp:TextBox ID="TBPhone" runat="server" CssClass="form-input" MaxLength="10"></asp:TextBox>
                     
                         <asp:Label ID="LEmail" runat="server" CssClass="form-label" Text="EMAIL"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -155,6 +158,7 @@
                         <asp:Label ID="LDistrict" runat="server" CssClass="form-label" Text="DISTRICT"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:RequiredFieldValidator ID="RFVDistrict" runat="server" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red" ControlToValidate="TBDistrict"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="TBDistrict" ErrorMessage="Wrong" Font-Size="Small" ForeColor="Red" ValidationExpression="^[a-zA-Z ]*$"></asp:RegularExpressionValidator>
                         <br />
                         <asp:TextBox ID="TBDistrict" runat="server" CssClass="form-input"></asp:TextBox>
                     
@@ -170,15 +174,17 @@
                         <asp:Label ID="LPincode" runat="server" CssClass="form-label " Text="PIN CODE"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:RequiredFieldValidator ID="RFVPin" runat="server" ControlToValidate="TBPincode" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TBPincode" ErrorMessage="Wrong" Font-Size="Small" ForeColor="Red" ValidationExpression="^\d{6}$"></asp:RegularExpressionValidator>
                         <br />
-                        <asp:TextBox ID="TBPincode" runat="server" CssClass="form-input form-input-half" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="TBPincode" runat="server" CssClass="form-input form-input-half"></asp:TextBox>
                         <br />
                     
                         <asp:Label ID="Label1" runat="server" Text="AADHAR NUMBER" CssClass="form-label"></asp:Label>
                         &nbsp;&nbsp;&nbsp;
                         <asp:RequiredFieldValidator ID="RFVAadhar" runat="server" ControlToValidate="TBAadhar" ErrorMessage="Field Can't be Empty" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TBAadhar" ErrorMessage="Wrong" Font-Size="Small" ForeColor="Red" ValidationExpression="^\d{4}\s\d{4}\s\d{4}$"></asp:RegularExpressionValidator>
                         <br />
-                        <asp:TextBox ID="TBAadhar" runat="server" CssClass="form-input" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="TBAadhar" runat="server" CssClass="form-input"></asp:TextBox>
                         <br />
                         
                         <center>

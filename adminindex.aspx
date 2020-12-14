@@ -273,7 +273,7 @@
                             <asp:Button ID="BPRefresh" runat="server" Text="Refresh" CssClass="booknow" OnClick="BPRefresh_Click"/></td>
                     </tr>
                 </table>
-                <asp:GridView ID="UserrecordsGridView" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                <asp:GridView ID="UserrecordsGridView" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnRowCommand="UserrecordsGridView_RowCommand">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="OpdNo" HeaderText="OPD ID" />

@@ -103,7 +103,7 @@ namespace ProjectDesignDemo
         private void LoadPatients()
         {
             conn.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT OpdNo,PatientName,FathersName,Phone,Email,DateofBirth,Gender,District,State,pincode,AadharNo FROM Patients", conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT OpdNo,PatientName,FathersName,Phone,Email,DateofBirth,Gender,District,State,pincode,AadharNo FROM Patients ORDER BY OpdNo DESC", conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             UserrecordsGridView.DataSource = dt;
@@ -383,5 +383,6 @@ namespace ProjectDesignDemo
         {
             
         }
+
     }
 }
