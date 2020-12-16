@@ -64,6 +64,7 @@ namespace ProjectDesignDemo
             {
                 if (TEmail.Text == "admin@khfh.com" && TPassword.Text == "admin")
                 {
+                    Session["logout"] = "true";
                     Response.Redirect("adminindex.aspx");
                 }
                 else
@@ -80,6 +81,7 @@ namespace ProjectDesignDemo
                     {
                         Session["email"] = TEmail.Text;
                         Session["password"] = TPassword.Text;
+                        Session["logout"] = "true";
                         Response.Redirect("userindex.aspx");
                     }
                     else

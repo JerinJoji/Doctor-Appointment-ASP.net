@@ -15,15 +15,22 @@ namespace ProjectDesignDemo
         SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
 
         protected void Page_Load(object sender, EventArgs e)
-		{
-            TodayAppointPanel.Visible = true;
-            RecordsPanel.Visible = false;
-            PatientsPanel.Visible = false;
-            ddlDepart.Enabled = false;
-            ddlDoctorlist.Enabled = false;
-            LoadPage();
-            LoadRecords();
-            LoadPatients();
+        {
+            if (Session["logout"] == null)
+            {
+                Response.Redirect("loginsignup.aspx");
+            }
+            else
+            {
+                TodayAppointPanel.Visible = true;
+                RecordsPanel.Visible = false;
+                PatientsPanel.Visible = false;
+                ddlDepart.Enabled = false;
+                ddlDoctorlist.Enabled = false;
+                LoadPage();
+                LoadRecords();
+                LoadPatients();
+            }
         }
 
         protected void GridTodayAppoint_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -234,6 +241,7 @@ namespace ProjectDesignDemo
 
         protected void Linklogout_Click(object sender, EventArgs e)
         {
+            Session.Remove("logout");
             Response.Redirect("index.aspx");
         }
 
