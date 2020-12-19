@@ -366,15 +366,6 @@ namespace ProjectDesignDemo
         protected global::System.Web.UI.WebControls.Button Btnpayonline;
 
         /// <summary>
-        /// Btnpaycounter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btnpaycounter;
-
-        /// <summary>
         /// Panelrecord control.
         /// </summary>
         /// <remarks>

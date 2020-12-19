@@ -209,7 +209,7 @@ namespace ProjectDesignDemo
                 cmd.Dispose();
                 SendConfirmMail();
                 Btnpayonline.Enabled = false;
-                Btnpaycounter.Enabled = false;
+                //Btnpaycounter.Enabled = false;
             }
             catch (SqlException ex)
             {
@@ -261,7 +261,7 @@ namespace ProjectDesignDemo
                 cmd.Dispose();
                 SendPayCounterMail();
                 Btnpayonline.Enabled = false;
-                Btnpaycounter.Enabled = false;
+                //Btnpaycounter.Enabled = false;
             }
             catch (SqlException ex)
             {

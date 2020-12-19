@@ -355,8 +355,7 @@
                                         <br />
                                         <asp:Button ID="Btnpayonline" runat="server" Text="PAY ONLINE" CssClass="booknow" OnClick="Btnpayonline_Click"/>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Button ID="Btnpaycounter" runat="server" Text="PAY AT COUNTER" CssClass="booknow" OnClick="Btnpaycounter_Click"/>
-                                    </div>
+                                        </div>
                                 </asp:View>
                             </asp:MultiView>
                         </div>
