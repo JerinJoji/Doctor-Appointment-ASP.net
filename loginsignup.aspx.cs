@@ -161,7 +161,7 @@ namespace ProjectDesignDemo
             {
                 SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\hp\\Documents\\Visual Studio 2019\\ProjectDesignDemo\\App_Data\\ProjectData.mdf;Integrated Security=True");
 
-                String insertSql = "INSERT INTO Patients(PatientName,FathersName,DateofBirth,Address,Village,PostOffice,PoliceStation,District,State,pincode,AadharNo,Phone,Email,Gender, Password)" +
+                String insertSql = "INSERT INTO Patients(PatientName,FathersName,DateofBirth,Address,Village,PostOffice,PoliceStation,District,State,pincode,AadharNo,Phone,Email,Gender,Password)" +
                 "values (@PatientName,@FathersName,@DateofBirth,@Address,@Village,@PostOffice,@PoliceStation,@District,@State,@pincode,@AadharNo,@Phone,@Email,@Gender,@Password)";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
@@ -234,7 +234,7 @@ namespace ProjectDesignDemo
                     cmd.ExecuteNonQuery();
                     Session["email"] = TBEmail.Text;
                     Session["password"] = TBPASSWORD.Text;
-
+                    Session["logout"] = "true";
                     Response.Redirect("userindex.aspx");
                 }
                 catch (SqlException ex)
